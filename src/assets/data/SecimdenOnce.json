@@ -1,0 +1,7 @@
+{
+  "baslik": "Seçimden Önce",
+  "maddeler": [
+    { "isim": "isim1", "soru": "El soru-1", "cevap": "El cevap-1" },
+    { "isim": "isim2", "soru": "El soru-2", "cevap": "El cevap-2" }
+  ]
+}

@@ -1,0 +1,25 @@
+.header-logo {
+    display: none;
+}
+
+.header-logo-xl {
+    display: block;
+}
+
+@media (max-width: 47.9375em) {
+    .header-logo {
+        display: block;
+    }
+
+    .header-logo-xl {
+        display: none;
+    }
+}
+
+.row.timer {
+margin: 80px 0;
+    &>* {
+        display: flex;
+        justify-content: center;
+    }
+}
