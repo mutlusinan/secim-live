@@ -1,3 +1,4 @@
+import { Container } from "@mantine/core";
 import { LayoutHeader } from "./Header";
 
 interface LayoutProps {
@@ -6,7 +7,7 @@ interface LayoutProps {
 
 export default function Layout({ children }: LayoutProps) {
   return (
-    <>
+    <Container>
       <LayoutHeader
         links={[
           {
@@ -19,6 +20,6 @@ export default function Layout({ children }: LayoutProps) {
       />
       <main>{children}</main>
       {/* <Footer /> */}
-    </>
+    </Container>
   );
 }
