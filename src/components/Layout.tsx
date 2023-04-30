@@ -11,11 +11,9 @@ export default function Layout({ children }: LayoutProps) {
       <LayoutHeader
         links={[
           {
-            link: "/first",
-            label: "First",
+            link: "/checklist",
+            label: "Görev Kontrol Listesi",
           },
-          { link: "/second", label: "Second" },
-          { link: "/third", label: "Third" },
         ]}
       />
       <main>{children}</main>
