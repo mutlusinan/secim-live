@@ -17,9 +17,29 @@
 }
 
 .row.timer {
-margin: 80px 0;
+    margin: 80px 0;
+
     &>* {
         display: flex;
         justify-content: center;
+    }
+}
+
+// td,
+// th,
+// tr {
+//     text-align: center;
+//     border: 1px solid black;
+//     border-width: 1px;
+// }
+
+.checklist-item {
+    .mantine-Checkbox-body {
+        align-items: center
+    }
+
+    label[data-disabled] {
+
+        color: gray;
     }
 }

@@ -1,9 +1,8 @@
-import React from 'react'
+import { Title } from "@mantine/core";
+import React from "react";
 
 function Calculator() {
-  return (
-    <div>Calculator</div>
-  )
+  return <Title align="center">Calculator</Title>;
 }
 
-export default Calculator
+export default Calculator;
