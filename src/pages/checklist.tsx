@@ -1,14 +1,20 @@
-import { useEffect, useState } from "react";
 import { Table } from "@mantine/core";
 import CheckList from "../assets/data/Checklist.json";
 import ChecklistItem from "../components/checklistItem";
-import { useLocalStorage } from "@mantine/hooks";
+import { useLocalStorage, useScrollIntoView } from "@mantine/hooks";
+import { useEffect } from "react";
 
 export default function Checklist() {
   const [lastChecked, setLastChecked] = useLocalStorage({
     key: "checkId",
     defaultValue: 0,
   });
+
+  const { scrollIntoView, targetRef } = useScrollIntoView<HTMLTableRowElement>({
+    duration: 0,
+  });
+
+  useEffect(() => scrollIntoView({ alignment: "center" }), [scrollIntoView]);
 
   return (
     <Table striped>
@@ -29,7 +35,8 @@ export default function Checklist() {
             checkItem={(number: number) => {
               setLastChecked(number);
             }}
-          ></ChecklistItem>
+            ref={targetRef}
+          />
         ))}
       </tbody>
     </Table>

@@ -1,4 +1,5 @@
 import { Checkbox } from "@mantine/core";
+import { forwardRef } from "react";
 
 interface ChecklistItem {
   id: number;
@@ -7,7 +8,10 @@ interface ChecklistItem {
   checkItem: Function;
 }
 
-export default function ChecklistItem(props: ChecklistItem) {
+function ChecklistItem(
+  props: ChecklistItem,
+  ref: React.LegacyRef<HTMLTableRowElement>
+) {
   const checkFn = (e: any) => {
     if (e.target.checked) {
       props.checkItem(props.id);
@@ -21,7 +25,7 @@ export default function ChecklistItem(props: ChecklistItem) {
   const nextCheck = props.id - props.checkId === 1;
 
   return (
-    <tr key={props.id}>
+    <tr key={props.id} ref={nextCheck ? ref : undefined}>
       <td>{props.id}</td>
       <td>
         <Checkbox
@@ -36,3 +40,5 @@ export default function ChecklistItem(props: ChecklistItem) {
     </tr>
   );
 }
+
+export default forwardRef(ChecklistItem);
