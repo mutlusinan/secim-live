@@ -2,16 +2,14 @@ import { useEffect, useState } from "react";
 import { Table } from "@mantine/core";
 import CheckList from "../assets/data/Checklist.json";
 import ChecklistItem from "../components/checklistItem";
+import { useLocalStorage } from "@mantine/hooks";
 
 export default function Checklist() {
-  const [lastChecked, setLastChecked] = useState(0);
+  const [lastChecked, setLastChecked] = useLocalStorage({
+    key: "checkId",
+    defaultValue: 0,
+  });
 
-  useEffect(() => {
-    const checkId = Number(localStorage.getItem("checkId"));
-    if (checkId) {
-      setLastChecked(checkId);
-    }
-  }, []);
   return (
     <Table striped>
       <thead>
@@ -30,7 +28,6 @@ export default function Checklist() {
             checkId={lastChecked}
             checkItem={(number: number) => {
               setLastChecked(number);
-              localStorage.setItem("checkId", number.toString());
             }}
           ></ChecklistItem>
         ))}
