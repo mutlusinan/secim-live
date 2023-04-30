@@ -18,6 +18,7 @@ export default function ChecklistItem(props: ChecklistItem) {
 
   const checked = props.checkId >= props.id;
   const readyToCheck = props.id - props.checkId > 1;
+  const nextCheck = props.id - props.checkId === 1;
 
   return (
     <tr key={props.id}>
@@ -26,7 +27,7 @@ export default function ChecklistItem(props: ChecklistItem) {
         <Checkbox
           disabled={readyToCheck}
           checked={checked}
-          className={"checklist-item" + (checked ? " checked" : "")}
+          className={"checklist-item" + (checked ? " checked" : "") + (nextCheck ? " next" : "")}
           key={props.id}
           label={props.item}
           onChange={checkFn}

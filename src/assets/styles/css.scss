@@ -34,8 +34,14 @@
 // }
 
 .checklist-item {
+    transition: 0.3s;
     .mantine-Checkbox-body {
         align-items: center
+    }
+
+    &.next {
+        padding-top: 20px;
+        padding-bottom: 20px;
     }
 
     label[data-disabled] {
