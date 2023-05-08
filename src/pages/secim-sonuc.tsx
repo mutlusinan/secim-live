@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import DATA from "../assets/data/SecimSonucIl.json";
 import { Select } from "@mantine/core";
 
-export default function Home() {
+export default function SecimSonuc() {
   interface SelectItem {
     value: string;
     label: string;
@@ -17,7 +17,9 @@ export default function Home() {
     setSecilenSehir(value);
   };
 
-  const secilenSehirSet = DATA.iller_parti.filter((il) => il.il_id === secilenSehir);
+  const secilenSehirSet = DATA.iller_parti.filter(
+    (il) => il.il_id === secilenSehir
+  );
   const sehirAdaySayisi = DATA.aday_sayisi.filter(
     (il) => il.il_id === secilenSehir
   )[0].bolge_mv_sayi;
@@ -40,16 +42,6 @@ export default function Home() {
                 <th key={a}>{a}</th>
               ))}
             </tr>
-            {/* {Array.from(
-              { length: Number(sehirAdaySayisi) },
-              (_, i) => i + 1
-            ).map((aday: number, i: number) => (
-              <tr key={i}>
-                {Object.keys(secilenSehirSet[0]).map((a) => (
-                  <td>{Math.floor(Number(secilenSehirSet[0][a]) / aday)}</td>
-                ))}
-              </tr>
-            ))} */}
           </table>
         </div>
       )}

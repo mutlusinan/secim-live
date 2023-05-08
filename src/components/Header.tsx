@@ -110,10 +110,10 @@ export function LayoutHeader({ links }: LayoutHeaderProps) {
   const [active, setActive] = useState(path);
   const { classes, cx } = useStyles();
 
-  const items = links.map((link) => {
+  const items = links.map((link, i) => {
     return (
       <Link
-        key={link.label}
+        key={i}
         href={link.link}
         className={cx(classes.link, {
           [classes.linkActive]: active === link.link,
@@ -127,7 +127,7 @@ export function LayoutHeader({ links }: LayoutHeaderProps) {
       </Link>
     );
   });
-  items.push(<ChangeTheme />);
+  items.push(<ChangeTheme key="change-theme" />);
 
   return (
     <Header height={HEADER_HEIGHT} mb={120} className={classes.root}>
@@ -143,7 +143,7 @@ export function LayoutHeader({ links }: LayoutHeaderProps) {
             className="header-logo-xl"
             src={HeaderLogoXL}
             height={60}
-            alt={active}
+            alt={"seçim live"}
           />
           <Image
             className="header-logo"

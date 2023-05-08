@@ -12,6 +12,11 @@ function ChecklistItem(
   props: ChecklistItem,
   ref: React.LegacyRef<HTMLTableRowElement>
 ) {
+  
+  const checked = props.checkId >= props.id;
+  const readyToCheck = props.id - props.checkId > 1;
+  const nextCheck = props.id - props.checkId === 1;
+  
   const checkFn = (e: any) => {
     if (e.target.checked) {
       props.checkItem(props.id);
@@ -19,17 +24,11 @@ function ChecklistItem(
       props.checkItem(props.id - 1);
     }
   };
-
-  const checked = props.checkId >= props.id;
-  const readyToCheck = props.id - props.checkId > 1;
-  const nextCheck = props.id - props.checkId === 1;
-
   return (
     <tr key={props.id} ref={nextCheck ? ref : undefined}>
       <td>{props.id}</td>
       <td>
         <Checkbox
-          disabled={readyToCheck}
           checked={checked}
           className={"checklist-item" + (checked ? " checked" : "") + (nextCheck ? " next" : "")}
           key={props.id}

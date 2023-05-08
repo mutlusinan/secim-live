@@ -1,5 +1,6 @@
 import { Container } from "@mantine/core";
 import { LayoutHeader } from "./Header";
+import MenuItems from "../assets/data/MenuItems.json";
 
 interface LayoutProps {
   children: any;
@@ -8,16 +9,8 @@ interface LayoutProps {
 export default function Layout({ children }: LayoutProps) {
   return (
     <Container>
-      <LayoutHeader
-        links={[
-          {
-            link: "/checklist",
-            label: "Görev Kontrol Listesi",
-          },
-        ]}
-      />
+      <LayoutHeader links={MenuItems} />
       <main>{children}</main>
-      {/* <Footer /> */}
     </Container>
   );
 }
