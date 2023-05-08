@@ -9,12 +9,16 @@ import {
   ColorSchemeProvider,
   ColorScheme,
 } from "@mantine/core";
+import ReactGA from "react-ga";
 
 export default function App(props: AppProps) {
   const { Component, pageProps } = props;
   const [colorScheme, setColorScheme] = useState<ColorScheme>("light");
   const toggleColorScheme = (value?: ColorScheme) =>
     setColorScheme(value || (colorScheme === "dark" ? "light" : "dark"));
+
+  const tracking_id = "G-CK70ZT38GK";
+  ReactGA.initialize(tracking_id);
 
   return (
     <>
