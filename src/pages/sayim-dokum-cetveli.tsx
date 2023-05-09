@@ -6,7 +6,6 @@ import {
   TextInput,
   Button,
   Tabs,
-  Modal,
   MultiSelect,
   SelectItem,
   Drawer,
