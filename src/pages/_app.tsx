@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Analytics } from "@vercel/analytics/react";
 import Layout from "@/components/Layout";
 import "@/assets/styles/css.scss";
 import "bootstrap/dist/css/bootstrap.css";
@@ -19,6 +20,8 @@ export default function App(props: AppProps) {
 
   const tracking_id = "G-CK70ZT38GK";
   ReactGA.initialize(tracking_id);
+  ReactGA.pageview(window.location.pathname + window.location.search);
+  console.log("ReactGA", ReactGA);
 
   return (
     <>
@@ -53,11 +56,11 @@ export default function App(props: AppProps) {
             },
             primaryColor: "redder",
             colorScheme,
-            /** Put your mantine theme override here */
           }}
         >
           <Layout>
             <Component {...pageProps} />
+            <Analytics />
           </Layout>
         </MantineProvider>
       </ColorSchemeProvider>
