@@ -20,8 +20,6 @@ export default function App(props: AppProps) {
 
   const tracking_id = "G-CK70ZT38GK";
   ReactGA.initialize(tracking_id);
-  ReactGA.pageview(window.location.pathname + window.location.search);
-  console.log("ReactGA", ReactGA);
 
   return (
     <>
