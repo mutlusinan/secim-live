@@ -135,6 +135,12 @@ export default function SayimDokumCetveli() {
     return list;
   }
 
+  // const editSandik = (data: any) => {
+  //   setSonuclar(data);
+  //   setSandikData(sandikData.filter((sandik) => sandik != data));
+  //   totalSonuc();
+  // };
+
   return (
     <>
       <Drawer
@@ -242,12 +248,14 @@ export default function SayimDokumCetveli() {
                 if (partiler.includes(aday.id))
                   return (
                     <div key={aday.id} className="col-12 px-0 vote-box">
-                      <img
-                        alt={aday.isim}
-                        title={aday.isim}
-                        src={imgFinder(aday.id).src}
-                        className="party-img"
-                      />
+                      <span style={{ minWidth: "50px" }}>
+                        <img
+                          alt={aday.isim}
+                          title={aday.isim}
+                          src={imgFinder(aday.id).src}
+                          className="party-img"
+                        />
+                      </span>
                       <span className="vote-name">{aday.isim}</span>
                       <Group className="numerator" spacing={5}>
                         <ActionIcon
@@ -319,34 +327,42 @@ export default function SayimDokumCetveli() {
                 .sort()
                 .map(([key, value]: any[]) => {
                   if (value)
-                    return (
-                      <p
-                        key={key}
-                        className={
-                          key.includes("aa") || key.includes("ab")
-                            ? "bolder"
-                            : ""
-                        }
-                        style={{
-                          marginBottom: "2px",
-                        }}
-                      >
-                        {`${nameFinder(key)}: `}
-                        <span className="bolder">{value}</span>
-                      </p>
-                    );
+                    if (key === "aaSchoolName" || key === "abSandikNumber")
+                      return (
+                        <p key={key} className="data-header" style={{}}>
+                          {value}
+                        </p>
+                      );
+                    else if (key === "zzTotal")
+                      return (
+                        <p key={key} className="data-header">
+                          {nameFinder(key)}
+                          <span className="bolder">{value}</span>
+                        </p>
+                      );
+                    else
+                      return (
+                        <p
+                          key={key}
+                          style={{
+                            marginBottom: "2px",
+                          }}
+                        >
+                          {`${nameFinder(key)}: `}
+                          <span className="bolder">{value}</span>
+                        </p>
+                      );
                 });
               return (
-                <div
-                  key={i}
-                  className="col-12 col-md-6"
-                  style={{
-                    border: "1px solid red",
-                    marginBottom: "5px",
-                    padding: "15px",
-                  }}
-                >
+                <div key={i} className="col-12 col-md-6 data-box">
                   {html}
+                  {/* <Button
+                    className="data-button"
+                    variant="light"
+                    onClick={() => editSandik(data)}
+                  >
+                    Kayıtları Sıfırla
+                  </Button> */}
                 </div>
               );
             })}
