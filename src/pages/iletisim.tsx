@@ -8,7 +8,7 @@ export default function Iletisim() {
         Eksikleri, istekleri, her türlü dilek ve şikayetleri iletmek için:
       </h3>
       <h4>
-        <a href="mailto:secim.life.info@gmail.com">secim.life.info@gmail.com</a>
+        <a href="mailto:secim.live.info@gmail.com">secim.live.info@gmail.com</a>
       </h4>
     </div>
   );
