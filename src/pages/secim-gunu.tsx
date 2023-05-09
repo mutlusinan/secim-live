@@ -7,6 +7,7 @@ import {
   useDisclosure,
 } from "@mantine/hooks";
 import { useEffect, useState } from "react";
+import Link from "next/link";
 
 export default function SecimGunu() {
   const [lastChecked, setLastChecked] = useLocalStorage({
@@ -58,8 +59,13 @@ export default function SecimGunu() {
       ) : (
         <>
           <p>
-            Bu liste Türkiye Barolar Birliği&lsquo;nin
-            <b> &quot;Müşahitler İçin Hukuk Rehberi&quot; </b>
+            Bu liste Türkiye Barolar Birliği&lsquo;nin{" "}
+            <Link
+              target="_blank"
+              href="https://d.barobirlik.org.tr/2023/Musahitler-Icin-Hukuk-Rehberi/"
+            >
+              <b>&quot;Müşahitler İçin Hukuk Rehberi&quot;</b>
+            </Link>{" "}
             adlı dökümanından alınmıştır. Müşahitlerin işine yarayabileceği gibi
             <b> sandık kurulu üyelerinin/başkanlarının</b> ve
             <b> kendi sandığının oy sayımında </b>
