@@ -24,6 +24,10 @@ import yrpLogo from "../assets/img/partiler/yrp.jpg";
 import mpLogo from "../assets/img/partiler/mp.png";
 import zaferLogo from "../assets/img/partiler/zafer.png";
 import vatanLogo from "../assets/img/partiler/vatan.jpg";
+import kkLogo from "../assets/img/cb/kilicdaroglu.png";
+import soLogo from "../assets/img/cb/ogan.png";
+import rteLogo from "../assets/img/cb/erdogan.png";
+import miLogo from "../assets/img/cb/ince.png";
 import headerLogo from "../assets/img/header-logo.png";
 
 export default function SayimDokumCetveli() {
@@ -96,7 +100,6 @@ export default function SayimDokumCetveli() {
     sonuclar.zzTotal = total;
     // @ts-ignore
     setSandikData([...sandikData, sonuclar]);
-    console.log("degisen", sonuclar, sandikData);
     setSonuclar({});
     setTotal(0);
     setPartiler(defaultParties);
@@ -122,6 +125,10 @@ export default function SayimDokumCetveli() {
     if (key === "mp") return mpLogo;
     if (key === "zafer") return zaferLogo;
     if (key === "vatan") return vatanLogo;
+    if (key === "rte") return rteLogo;
+    if (key === "mi") return miLogo;
+    if (key === "kk") return kkLogo;
+    if (key === "so") return soLogo;
     else return headerLogo;
   };
 
@@ -208,6 +215,14 @@ export default function SayimDokumCetveli() {
             ? Partiler.filter((parti) => parti.type === "a").map((aday) => {
                 return (
                   <div key={aday.id} className="col-12 px-0 vote-box">
+                    <span style={{ minWidth: "36px" }}>
+                      <img
+                        alt={aday.isim}
+                        title={aday.isim}
+                        src={imgFinder(aday.id).src}
+                        className="party-img"
+                      />
+                    </span>
                     <span className="vote-name">{aday.isim}</span>
                     <Group className="numerator" spacing={5}>
                       <ActionIcon
@@ -278,7 +293,7 @@ export default function SayimDokumCetveli() {
                           }}
                           id={aday.id}
                           //@ts-ignore
-                          value={sonuclar[aday.id]}
+                          value={sonuclar[aday.id] || 0}
                           defaultValue={0}
                         />
                         <ActionIcon
@@ -342,15 +357,24 @@ export default function SayimDokumCetveli() {
                       );
                     else
                       return (
-                        <p
+                        <div
                           key={key}
                           style={{
                             marginBottom: "2px",
                           }}
+                          className="vote-box"
                         >
-                          {`${nameFinder(key)}: `}
+                          <span style={{ minWidth: "54px" }}>
+                            <img
+                              alt={value}
+                              title={value}
+                              src={imgFinder(key).src}
+                              className="party-img"
+                            />
+                          </span>
+                          <span>{`${nameFinder(key)}: `}</span>
                           <span className="bolder">{value}</span>
-                        </p>
+                        </div>
                       );
                 });
               return (

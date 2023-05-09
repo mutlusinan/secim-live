@@ -82,7 +82,7 @@ button {
     display: flex;
     justify-content: center;
     align-items: center;
-    justify-content: space-between;
+    justify-content: flex-start;
     margin-bottom: 5px;
 
     .vote-name {
@@ -114,6 +114,7 @@ button {
     border: 1px solid red;
     margin-bottom: 5px;
     padding: 15px;
+    border-radius: 0.25rem;
 }
 
 .data-header {
@@ -138,6 +139,7 @@ img.party-img {
     padding: 20px 50px;
     margin-bottom: 20px;
     border-radius: 0.25rem;
+    background-color: #fffaf085;
 
     &:hover {
         filter: saturate(3) opacity(50%) drop-shadow(2px 2px 4px gray);

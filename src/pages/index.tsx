@@ -2,24 +2,41 @@ import Image from "next/image";
 import MenuItems from "../assets/data/MenuItems.json";
 import ovo from "../assets/img/ovo.png";
 import tg from "../assets/img/tg.png";
+import { Button } from "@mantine/core";
 
 export default function Home() {
   return (
     <div className="main-container">
+      <p>
+        <b>secim.live</b>, seçimlerde görev alan kişilerin işlerine yarayacak
+        araçların, belgelerin ve bilgierin bir araya getirildiği bir
+        platformdur.
+        <br />
+        Devlet kurumları ve güvenilir sivil toplum kuruluşları tarafından
+        üretilmiş veya yaygınlaştırılmış olan bilgi ve belgelerin kullanılmasına
+        dikkat eder.
+      </p>
       <div className="row">
         {MenuItems.map((item, i) => {
           return (
             <div key={i} className="col-12 col-md-6">
               <a href={item.link}>
-                <button style={{ width: "90%" }} className="main-buttons">
+                <Button
+                  style={{
+                    width: "90%",
+                    marginBottom: "15px",
+                    fontSize: "16px",
+                  }}
+                  variant="outline"
+                >
                   {item.label}
-                </button>
+                </Button>
               </a>
             </div>
           );
         })}
       </div>
-      <div className="row d-flex justify-content-center gonullu my-5">
+      <div className="row d-flex justify-content-center gonullu my-4">
         <div className="col-12">
           <p style={{ fontSize: "30px" }}>
             Müşahit olmak için geç kalmış değilsin!
