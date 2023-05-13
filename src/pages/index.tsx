@@ -1,4 +1,3 @@
-import Image from "next/image";
 import MenuItems from "../assets/data/MenuItems.json";
 import ovo from "../assets/img/ovo.png";
 import tg from "../assets/img/tg.png";

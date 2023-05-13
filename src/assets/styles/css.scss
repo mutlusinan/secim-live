@@ -160,6 +160,12 @@ img.party-img {
     height: calc(100vh - 80px);
 }
 
+.pdf-container {
+    display: flex;
+    justify-content: center;
+    width: 90vw;
+}
+
 //UTILS
 .pl-0 {
     padding-left: 0px !important;
