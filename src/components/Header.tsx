@@ -15,6 +15,7 @@ import HeaderLogo from "../assets/img/header-logo.png";
 import HeaderLogoXL from "../assets/img/header-logo-xl.png";
 import Link from "next/link";
 import ChangeTheme from "./ChangeTheme";
+import { useRouter } from "next/router";
 
 const HEADER_HEIGHT = rem(60);
 
@@ -102,12 +103,8 @@ interface LayoutHeaderProps {
 }
 
 export function LayoutHeader({ links }: LayoutHeaderProps) {
-  let path = "";
-  if (typeof window !== "undefined") {
-    path = window.location.pathname;
-  }
   const [opened, { toggle, close }] = useDisclosure(false);
-  const [active, setActive] = useState(path);
+  const router = useRouter();
   const { classes, cx } = useStyles();
 
   const items = links.map((link, i) => {
@@ -116,10 +113,9 @@ export function LayoutHeader({ links }: LayoutHeaderProps) {
         key={i}
         href={link.link}
         className={cx(classes.link, {
-          [classes.linkActive]: active === link.link,
+          [classes.linkActive]: router.pathname === link.link,
         })}
         onClick={() => {
-          setActive(link.link);
           close();
         }}
       >
@@ -135,7 +131,6 @@ export function LayoutHeader({ links }: LayoutHeaderProps) {
         <Link
           href="/"
           onClick={() => {
-            setActive("");
             close();
           }}
         >
