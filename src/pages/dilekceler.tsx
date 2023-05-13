@@ -13,7 +13,7 @@ export default function Dilekceler() {
     <div className="container" style={{ textAlign: "center" }}>
       <h1>Dilekçeler</h1>
       <p style={{ textAlign: "left" }}>
-        Bu sayfadaki dilekçeler Oy ve Ötesi'nin{" "}
+        Bu sayfadaki dilekçeler Oy ve Ötesi&lsquo;nin{" "}
         <Link target="_blank" href="https://oyveotesi.org/egitim-seti/">
           <b>eğitim setinden</b>
         </Link>{" "}
