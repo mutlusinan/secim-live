@@ -9,7 +9,7 @@ import {
 import { useEffect, useState } from "react";
 import Link from "next/link";
 
-export default function SecimGunu() {
+export default function KontrolListesi() {
   const [lastChecked, setLastChecked] = useLocalStorage({
     key: "checkId",
     defaultValue: 0,
@@ -48,6 +48,10 @@ export default function SecimGunu() {
           Hayır
         </button>
       </Modal>
+      <p className="checklist-definition">
+        İşaretlemeleriniz cihazınıza kaydedilmektedir.{" "}
+        <b>Sayfayı yenilemek veya kapatmak veri kaybına sebep olmayacaktır.</b>
+      </p>
       <div className="row mb-4">
         <Tabs defaultValue={isOncesi ? "oncesinde" : "sirasinda"}>
           <Tabs.List grow position="apart">
@@ -60,10 +64,7 @@ export default function SecimGunu() {
           </Tabs.List>
         </Tabs>
       </div>
-      <p className="checklist-definition">
-        İşaretlemeleriniz kaydedilmektedir.{" "}
-        <b>Sayfayı yenilemek veya kapatmak veri kaybına sebep olmayacaktır.</b>
-      </p>
+
       {isOncesi ? (
         <>
           <Table striped>

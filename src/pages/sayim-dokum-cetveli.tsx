@@ -330,7 +330,7 @@ export default function SayimDokumCetveli() {
           </div>
           <div className="col-12 mt-3 d-flex justify-content-center">
             <Button variant="light" onClick={saveSandik}>
-              Sandığı Kaydet
+              Sandığı Cihazına Kaydet
             </Button>
           </div>
         </div>
@@ -380,19 +380,12 @@ export default function SayimDokumCetveli() {
               return (
                 <div key={i} className="col-12 col-md-6 data-box">
                   {html}
-                  {/* <Button
-                    className="data-button"
-                    variant="light"
-                    onClick={() => editSandik(data)}
-                  >
-                    Kayıtları Sıfırla
-                  </Button> */}
                 </div>
               );
             })}
             <div className="col-12 my-3 d-flex justify-content-center">
               <Button variant="light" onClick={deleteSandikData}>
-                Kayıtları Sıfırla
+                Cihazındaki Kayıtları Sıfırla
               </Button>
             </div>
           </div>

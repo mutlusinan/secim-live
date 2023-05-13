@@ -33,6 +33,15 @@ export default function App(props: AppProps) {
           name="viewport"
           content="minimum-scale=1, initial-scale=1, width=device-width"
         />
+        <meta property="og:title" content="seçim.live" />
+        <meta
+          property="og:description"
+          content="Seçim araçları aynı torbada!"
+        />
+        <meta
+          property="og:image"
+          content="https://www.secim.live/img/checklist.jpg"
+        />
       </Head>
       <ColorSchemeProvider
         colorScheme={colorScheme}

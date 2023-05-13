@@ -6,11 +6,21 @@ pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/$
 
 interface PDFViewerProps {
   link: string;
+  close: Function;
 }
 export default function PDFViewer(props: PDFViewerProps) {
   const [isBelge, setIsBelge] = useState(true);
   return (
     <>
+      <div style={{ textAlign: "center" }}>
+        <Button
+          variant={"outline"}
+          style={{ marginBottom: "10px" }}
+          onClick={() => props.close()}
+        >
+          Geri Dön
+        </Button>
+      </div>
       <div style={{ textAlign: "center" }}>
         <Button
           variant={isBelge ? "filled" : "outline"}

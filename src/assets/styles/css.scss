@@ -166,6 +166,19 @@ img.party-img {
     width: 90vw;
 }
 
+.dilekce-button {
+    .mantine-Button-root {
+        padding: 5px 1.2rem;
+        height: unset;
+    }
+
+    .mantine-Button-label {
+        text-align: center;
+        white-space: normal;
+        line-height: 1.2;
+    }
+}
+
 //UTILS
 .pl-0 {
     padding-left: 0px !important;
