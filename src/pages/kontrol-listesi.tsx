@@ -21,7 +21,7 @@ export default function KontrolListesi() {
 
   const [opened, { open, close }] = useDisclosure(false);
   const [atlananSayi, setAtlananSayi] = useState(0);
-  const [isOncesi, setIsOncesi] = useState(true);
+  const [isOncesi, setIsOncesi] = useState(false);
   const [checkedList, setCheckedList] = useState([0]);
 
   const { scrollIntoView, targetRef } = useScrollIntoView<HTMLTableRowElement>({
