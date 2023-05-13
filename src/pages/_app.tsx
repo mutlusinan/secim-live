@@ -40,7 +40,7 @@ export default function App(props: AppProps) {
         />
         <meta
           property="og:image"
-          content="https://www.secim.live/img/checklist.jpg"
+          content="https://www.secim.live/img/image-logo.png"
         />
       </Head>
       <ColorSchemeProvider
