@@ -9,6 +9,9 @@ export default function Dilekceler() {
   const [search, setSearch] = useState("");
   const [opened, { open, close }] = useDisclosure(false);
 
+  const filtered = DilekceList.filter((dilekce) =>
+    (dilekce.text + " " + dilekce.tags).toLowerCase().includes(search)
+  );
   return (
     <div className="container" style={{ textAlign: "center" }}>
       <h1>Dilekçeler</h1>
@@ -35,9 +38,7 @@ export default function Dilekceler() {
         label="Arama"
         onChange={(e: any) => setSearch(e.target.value.toLowerCase())}
       />
-      {DilekceList.filter((dilekce) =>
-        (dilekce.text + " " + dilekce.tags).toLowerCase().includes(search)
-      ).map((dilekce) => (
+      {filtered.map((dilekce) => (
         <div key={dilekce.id} className="col-12 mb-1 dilekce-button">
           <Button
             style={{ width: "100%" }}
@@ -52,7 +53,16 @@ export default function Dilekceler() {
         </div>
       ))}
 
+      {filtered.length === 0 && (
+        <p style={{ color: "gray" }}>
+          Sonuç bulunamamıştır. Lütfen başka şekilde aratmayı deneyin.
+        </p>
+      )}
+
       <Drawer opened={opened} onClose={close} position="right" size="100%">
+        <p className="pdf-viewer-mobile-show" style={{ textAlign: "center" }}>
+          Mobil cihazlarda yatay konumda kullanılması önerilir.
+        </p>
         <PDFViewer link={file} close={close} />
       </Drawer>
     </div>

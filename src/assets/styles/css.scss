@@ -179,6 +179,17 @@ img.party-img {
     }
 }
 
+.pdf-viewer-mobile-show {
+    display: none;
+}
+
+@media (max-width: 550px) {
+
+    .pdf-viewer-mobile-show {
+        display: block
+    }
+}
+
 //UTILS
 .pl-0 {
     padding-left: 0px !important;

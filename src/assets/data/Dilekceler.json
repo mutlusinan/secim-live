@@ -3,107 +3,126 @@
     "id": 1,
     "link": "/dilekce/D1.pdf",
     "text": "Müşahitin Sandık Çevresine Alınmaması",
-    "tags": "sabah, yasak, sandık kurulu, okul, bahçe"
+    "tags": "sabah, yasak, sandık kurulu, okul, bahçe, sandık mahali, müşahit, sınıf, sandık başı, sandık yanı"
   },
   {
     "id": 2,
     "link": "/dilekce/D2.pdf",
     "text": "Oy Verme Araçları Hakkında İtiraz",
-    "tags": "eksik, çuval, mühür, paket, başkan, sandık kurulu"
+    "tags": "eksik, çuval, mühür, paket, başkan, sandık kurulu, pusula, zarf, sayı, yetersiz, az"
   },
   {
     "id": 3,
     "link": "/dilekce/D3.pdf",
-    "text": "Pusula ve Zarfların Sandık Kurulu Mührü ile Mühürlenmemesi Hakkında İtiraz"
+    "text": "Pusula ve Zarfların Sandık Kurulu Mührü ile Mühürlenmemesi Hakkında İtiraz",
+    "tags": "mühürleme, mühürlenmiyor, mühürlenmedi, muhur"
   },
   {
     "id": 4,
     "link": "/dilekce/D4.pdf",
-    "text": "Seçmenin Kaydı Bulunmamasına Rağmen Oy Kullanılması Hakkında İtiraz"
+    "text": "Seçmenin Kaydı Bulunmamasına Rağmen Oy Kullanılması Hakkında İtiraz",
+    "tags": "seçmen kaydı, kayıtsız, seçmen, kaydı, kayıtlı"
   },
   {
     "id": 5,
     "link": "/dilekce/D5.pdf",
-    "text": "Oy Verme Yerine Cep Telefonu Sokulması Hakkında İtiraz"
+    "text": "Oy Verme Yerine Cep Telefonu Sokulması Hakkında İtiraz",
+    "tags": "telefon, cep telefonu, kamera, kabin, film, fotoğraf, kayıt"
   },
   {
     "id": 6,
     "link": "/dilekce/D6.pdf",
-    "text": "Bir Seçmenin Birden Fazla Engelliye Yardım Etmesi Hakkında İtiraz"
+    "text": "Bir Seçmenin Birden Fazla Engelliye Yardım Etmesi Hakkında İtiraz",
+    "tags": "seçmen, refakatçi, refakat, engelli, akraba, aynı kişi, birden fazla "
   },
   {
     "id": 7,
     "link": "/dilekce/D7.pdf",
-    "text": "142 Belgesi Hakkında İtiraz"
+    "text": "142 Belgesi Hakkında İtiraz",
+    "tags": "142 belgesi,  görevli, görevlendirme, polis, jandarma, kolluk, kolluk kuvveti"
   },
   {
     "id": 8,
     "link": "/dilekce/D8.pdf",
-    "text": "Seçmene Oy Kullanırken Refakat Edilmiş Olması Hakkında İtiraz"
+    "text": "Seçmene Oy Kullanırken Refakat Edilmiş Olması Hakkında İtiraz",
+    "tags": "refakatçi, refakat, kabin, engelli "
   },
   {
     "id": 9,
     "link": "/dilekce/D9.pdf",
-    "text": "Bedensel Engeli Bulunmamasına Rağmen Seçmenin Akrabası ile Oy Kullanması Hakkında İtiraz"
+    "text": "Bedensel Engeli Bulunmamasına Rağmen Seçmenin Akrabası ile Oy Kullanması Hakkında İtiraz",
+    "tags": "refakatçi, refakat, kabin, engelli olmayan, engelsiz, birlikte, beraber, iki kişi "
   },
   {
     "id": 10,
     "link": "/dilekce/D10.pdf",
-    "text": "Oy Verme Araçlarının ve – veya Sandığın Sandık Çevresinin Dışına Çıkarılması Hakkında İtiraz"
+    "text": "Oy Verme Araçlarının ve – veya Sandığın Sandık Çevresinin Dışına Çıkarılması Hakkında İtiraz",
+    "tags": "mühür, pusula, zarf, evet, tercih, dışarı, dışarıya, dışarıda"
   },
   {
     "id": 11,
     "link": "/dilekce/D11.pdf",
-    "text": "Parti Rozeti – Amblemi Hakkında İtiraz"
+    "text": "Parti Rozeti – Amblemi Hakkında İtiraz",
+    "tags": "rozet, sembol, amblem, parti, partili, propaganda, propoganda, logo, slogan"
   },
   {
     "id": 12,
     "link": "/dilekce/D12.pdf",
-    "text": "Kolluk Güçleri Hakkında İtiraz"
+    "text": "Kolluk Güçleri Hakkında İtiraz",
+    "tags": "polis, jandarma, kolluk, kolluk kuvveti "
   },
   {
     "id": 13,
     "link": "/dilekce/D13.pdf",
-    "text": "Oy Verme Süresi Bitmeden Sandıkların Açılması Hakkında İtiraz"
+    "text": "Oy Verme Süresi Bitmeden Sandıkların Açılması Hakkında İtiraz",
+    "tags": "erken, önce, 17:00, 17.00, 5, saat, bitiş, bitmeden, süre, süreç "
   },
   {
     "id": 14,
     "link": "/dilekce/D14.pdf",
-    "text": "Seyyar Sandık Gelmeden Önce Sandığın Açılması Hakkında İtiraz"
+    "text": "Seyyar Sandık Gelmeden Önce Sandığın Açılması Hakkında İtiraz",
+    "tags": "teslim"
   },
   {
     "id": 15,
     "link": "/dilekce/D15.pdf",
-    "text": "Oy Verme Süresinin Bitiş Saatinden Sonra Oy Kullanıldırılması Hakkında İtiraz"
+    "text": "Oy Verme Süresinin Bitiş Saatinden Sonra Oy Kullanıldırılması Hakkında İtiraz",
+    "tags": "17:00, 17.00, 5, saat, bitiş, geç, sonra, bittikten "
   },
   {
     "id": 16,
     "link": "/dilekce/D16.pdf",
-    "text": "Kullanılmamış Pusula ve Zarflar Hakkında İtiraz"
+    "text": "Kullanılmamış Pusula ve Zarflar Hakkında İtiraz",
+    "tags": "kullanılmamış, kullanılmayan, artan, fazla, ekstra, zarf, pusula, paketlenmeden "
   },
   {
     "id": 17,
     "link": "/dilekce/D17.pdf",
-    "text": "Sandıktan Oy Kullanan Seçmen Sayısından Fazla Zarf Çıkması Hakkında İtiraz"
+    "text": "Sandıktan Oy Kullanan Seçmen Sayısından Fazla Zarf Çıkması Hakkında İtiraz",
+    "tags": "fazla, sayıdan, sayısından, zarf"
   },
   {
     "id": 18,
     "link": "/dilekce/D18.pdf",
-    "text": "Seçim Türlerine Ait Oy Pusulaları Hakkında İtiraz"
+    "text": "Seçim Türlerine Ait Oy Pusulaları Hakkında İtiraz",
+    "tags": "pusula, fazla, yanlış, başka, farklı, değişik, yabancı, diğer "
   },
   {
     "id": 19,
     "link": "/dilekce/D19.pdf",
-    "text": "Sadece Okuma Yazma Bilmemesine Rağmen Seçmene Oy Kullanırken Refakat Edilmesi Hakkında İtiraz"
+    "text": "Sadece Okuma Yazma Bilmemesine Rağmen Seçmene Oy Kullanırken Refakat Edilmesi Hakkında İtiraz",
+    "tags": "refakatçi, refakat, kabin, engelli olmayan, engelsiz, birlikte, beraber, iki kişi, okuma, okuma yazma, yazma, bilmeyen"
   },
   {
     "id": 20,
     "link": "/dilekce/D20.pdf",
-    "text": "Seçmenin Oy Kullanamayacağı Yönünde Şerh Düşülmesi Hakkında İtiraz"
+    "text": "Seçmenin Oy Kullanamayacağı Yönünde Şerh Düşülmesi Hakkında İtiraz",
+    "tags": "şerh, oy kullanamaz, oy kullanamayacağına, listede, liste, not "
   },
   {
     "id": 21,
     "link": "/dilekce/D21.pdf",
-    "text": "Kolluğun Sandık Sonuç Tutanağı Alması Dilekçesi"
+    "text": "Kolluğun Sandık Sonuç Tutanağı Alması Dilekçesi",
+    "tags": "polis, jandarma, kolluk, kolluk kuvveti, tutanak "
   }
 ]
