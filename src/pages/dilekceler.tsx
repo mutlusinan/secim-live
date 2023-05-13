@@ -1,8 +1,7 @@
+import PDFViewer from "@/components/PDFViewer";
 import { Button, Drawer } from "@mantine/core";
 import { useDisclosure } from "@mantine/hooks";
 import { useState } from "react";
-import { Document, Page } from "react-pdf";
-
 export default function Dilekceler() {
   const [file, setFile] = useState<any>();
   const [opened, { open, close }] = useDisclosure(false);
@@ -22,12 +21,7 @@ export default function Dilekceler() {
       </Button>
 
       <Drawer opened={opened} onClose={close} position="right" size="100%">
-        <iframe
-          className="dilekce-container"
-          src={"/dilekce/D1.pdf"}
-          height="100%"
-          width="100%"
-        />
+        <PDFViewer />
       </Drawer>
     </div>
   );
