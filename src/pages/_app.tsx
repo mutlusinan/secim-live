@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { Analytics } from "@vercel/analytics/react";
 import Layout from "@/components/Layout";
 import "@/assets/styles/css.scss";
@@ -11,10 +10,15 @@ import {
   ColorScheme,
 } from "@mantine/core";
 import ReactGA from "react-ga";
+import { useLocalStorage } from "@mantine/hooks";
 
 export default function App(props: AppProps) {
   const { Component, pageProps } = props;
-  const [colorScheme, setColorScheme] = useState<ColorScheme>("light");
+  const [colorScheme, setColorScheme] = useLocalStorage<ColorScheme>({
+    key: "mantine-color-scheme",
+    defaultValue: "light",
+    getInitialValueInEffect: true,
+  });
   const toggleColorScheme = (value?: ColorScheme) =>
     setColorScheme(value || (colorScheme === "dark" ? "light" : "dark"));
 

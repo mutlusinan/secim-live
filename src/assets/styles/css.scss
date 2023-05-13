@@ -139,7 +139,7 @@ img.party-img {
     padding: 20px 50px;
     margin-bottom: 20px;
     border-radius: 0.25rem;
-    background-color: #fffaf085;
+    background-color: rgb(240 240 240);
 
     &:hover {
         filter: saturate(3) opacity(50%) drop-shadow(2px 2px 4px gray);
@@ -150,6 +150,15 @@ img.party-img {
     font-weight: 600;
 }
 
+.checklist-definition {
+    text-align: center;
+    color: crimson;
+    font-size: 18px;
+}
+
+.dilekce-container {
+    height: calc(100vh - 80px);
+}
 
 //UTILS
 .pl-0 {

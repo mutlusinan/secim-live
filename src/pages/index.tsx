@@ -3,6 +3,7 @@ import MenuItems from "../assets/data/MenuItems.json";
 import ovo from "../assets/img/ovo.png";
 import tg from "../assets/img/tg.png";
 import { Button } from "@mantine/core";
+import Link from "next/link";
 
 export default function Home() {
   return (
@@ -20,7 +21,7 @@ export default function Home() {
         {MenuItems.map((item, i) => {
           return (
             <div key={i} className="col-12 col-md-6">
-              <a href={item.link}>
+              <Link href={item.link}>
                 <Button
                   style={{
                     width: "90%",
@@ -31,7 +32,7 @@ export default function Home() {
                 >
                   {item.label}
                 </Button>
-              </a>
+              </Link>
             </div>
           );
         })}

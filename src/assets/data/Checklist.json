@@ -220,5 +220,72 @@
       "id": 55,
       "item": "Bir başkan ve en az siyasi partili iki sandık kurulu üyesinin İlçe Seçim Kuruluna gidişi sırasında, yer yokluğu nedeniyle, engel olanlara YSK’nın 135/1 Sayılı Genelgesi’nin 45/1. maddesi ile YSK’nın 28.05.2015 tarih ve 1063 sayılı kararı hatırlatılarak, seçim torbası İlçe Seçim Kurulu Başkanlığına sorunsuz teslim edildi."
     }
+  ],
+  "secimoncesi": [
+    {
+      "id": 1,
+      "item": "Üzerinde fotoğraf ve TC kimlik numarası bulunan kimlik veya muadil belge"
+    },
+    {
+      "id": 2,
+      "item": "Seçim giriş belgesi/görev belgesi/müşahit kartı"
+    },
+    {
+      "id": 3,
+      "item": "Su"
+    },
+    {
+      "id": 4,
+      "item": "Kullandığınız ilaç"
+    },
+    {
+      "id": 5,
+      "item": "Yiyecek/atıştırmalık"
+    },
+
+    {
+      "id": 6,
+      "item": "Kalem, boş kağıt"
+    },
+    {
+      "id": 7,
+      "item": "Şarj aleti"
+    },
+    {
+      "id": 8,
+      "item": "Powerbank"
+    },
+    {
+      "id": 9,
+      "item": "Karbon kağıdı"
+    },
+    {
+      "id": 10,
+      "item": "135 no'lu genelge çıktısı"
+    },
+    {
+      "id": 11,
+      "item": "Bant"
+    },
+    {
+      "id": 12,
+      "item": "Makas"
+    },
+    {
+      "id": 13,
+      "item": "Zımba makinesi/zımba teli"
+    },
+    {
+      "id": 14,
+      "item": "Cetvet"
+    },
+    {
+      "id": 15,
+      "item": "Çakmak"
+    },
+    {
+      "id": 16,
+      "item": "Priz çoklayıcı/üçlü priz"
+    }
   ]
 }
