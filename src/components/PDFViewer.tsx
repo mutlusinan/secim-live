@@ -1,4 +1,5 @@
 import { Button } from "@mantine/core";
+import { useViewportSize } from "@mantine/hooks";
 import Link from "next/link";
 import React, { useState } from "react";
 import { Document, Page, pdfjs } from "react-pdf";
@@ -9,6 +10,7 @@ interface PDFViewerProps {
   close: Function;
 }
 export default function PDFViewer(props: PDFViewerProps) {
+  const { width } = useViewportSize();
   const [isBelge, setIsBelge] = useState(true);
   return (
     <>
@@ -58,6 +60,7 @@ export default function PDFViewer(props: PDFViewerProps) {
           renderMode={isBelge ? "canvas" : "none"}
           renderTextLayer={!isBelge}
           renderAnnotationLayer={false}
+          width={width > 1080 ? 1080 : width}
         />
       </Document>
     </>
