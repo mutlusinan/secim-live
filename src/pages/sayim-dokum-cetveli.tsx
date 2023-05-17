@@ -459,6 +459,7 @@ export default function SayimDokumCetveli() {
               label="Sandık Numarası"
               id="sandik-number"
               value={titleData.sandik}
+              min={0}
               onChange={(sandik) => {
                 setTitleData({
                   ...titleData,
