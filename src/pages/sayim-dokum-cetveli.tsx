@@ -195,7 +195,12 @@ export default function SayimDokumCetveli() {
     );
 
     return [
-      <div key={i} className="col-12 col-md-6 data-box">
+      <div
+        key={i}
+        className={
+          "col-12 col-md data-box" + (i % 2 === 0 ? " me-md-1" : " ms-md-1")
+        }
+      >
         {arr}
       </div>,
     ];
