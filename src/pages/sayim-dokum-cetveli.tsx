@@ -7,11 +7,21 @@ import {
   Button,
   Tabs,
   MultiSelect,
+  Select,
   SelectItem,
   Drawer,
+  Card,
+  Text,
+  Badge,
+  Grid,
+  Stack,
+  Space,
+  Title,
 } from "@mantine/core";
+import Image from "next/image";
 import { useLocalStorage, useDisclosure } from "@mantine/hooks";
 import Partiler from "../assets/data/Partiler.json";
+import ilcemahalle from "../assets/data/ilcemahalle.json";
 import { useState, useEffect } from "react";
 import akpLogo from "../assets/img/partiler/akp.png";
 import chpLogo from "../assets/img/partiler/chp.jpg";
@@ -44,13 +54,19 @@ export default function SayimDokumCetveli() {
   ];
   const [opened, { open, close }] = useDisclosure(false);
   const [sandikData, setSandikData, deleteSandikData] = useLocalStorage({
-    key: "saved-sandik",
+    key: "saved-sandik-data",
     defaultValue: [],
   });
   const [sonuclar, setSonuclar] = useState({});
   const [total, setTotal] = useState(0);
   const [isCumhur, setIsCumhur] = useState(true);
   const [partiler, setPartiler] = useState(defaultParties);
+  const [titleData, setTitleData] = useState({
+    il: "",
+    ilce: "",
+    okul: "",
+    sandik: 0,
+  });
   let selectedParties: string[] = [];
 
   const totalSonuc = () => {
@@ -92,23 +108,34 @@ export default function SayimDokumCetveli() {
 
   const saveSandik = () => {
     if (total === 0) return;
+
+    const newSonuc = {
+      title: { il: "", ilce: "", okul: "", sandik: 0 },
+      results: {},
+      toplam: 0,
+      date: 0,
+    };
+    newSonuc.title.il = titleData.il;
+    newSonuc.title.ilce = titleData.ilce;
+    newSonuc.title.okul = titleData.okul;
+    newSonuc.title.sandik = titleData.sandik;
+    newSonuc.results = sonuclar;
+    newSonuc.toplam = total;
+    newSonuc.date = Date.now();
     // @ts-ignore
-    sonuclar.aaSchoolName = document.getElementById("school-name")?.value;
-    // @ts-ignore
-    sonuclar.abSandikNumber = document.getElementById("sandik-number")?.value;
-    // @ts-ignore
-    sonuclar.zzTotal = total;
-    // @ts-ignore
-    setSandikData([...sandikData, sonuclar]);
+    setSandikData([...sandikData, newSonuc]);
     setSonuclar({});
     setTotal(0);
     setPartiler(defaultParties);
+    setTitleData({
+      il: "",
+      ilce: "",
+      okul: "",
+      sandik: 0,
+    });
   };
 
   const nameFinder = (key: string) => {
-    if (key === "aaSchoolName") return "Okul ismi: ";
-    if (key === "abSandikNumber") return "Sandık numarası: ";
-    if (key === "zzTotal") return "Toplam: ";
     const selected = Partiler.find((parti) => parti.id === key);
     return selected?.isim;
   };
@@ -147,6 +174,23 @@ export default function SayimDokumCetveli() {
   //   setSandikData(sandikData.filter((sandik) => sandik != data));
   //   totalSonuc();
   // };
+
+  const ilListe = ilcemahalle.data.map((il) => {
+    return il.name;
+  });
+
+  function ilceListe(ilName: string) {
+    if (!ilName) {
+      return [];
+    }
+    const list: string[] = [];
+    ilcemahalle.data
+      .find((il) => il.name === ilName)
+      ?.districts.map((ilce) => {
+        return list.push(ilce.name);
+      });
+    return list;
+  }
 
   return (
     <>
@@ -211,10 +255,57 @@ export default function SayimDokumCetveli() {
           </div>
         </div>
         <div className="row">
-          {isCumhur
-            ? Partiler.filter(
-                (parti) => parti.type === "a" && parti.runoff
-              ).map((aday) => {
+          {Partiler.filter((parti) => parti.type === "a" && parti.runoff).map(
+            (aday) => {
+              return (
+                <div key={aday.id} className="col-12 px-0 vote-box">
+                  <span style={{ minWidth: "36px" }}>
+                    <img
+                      alt={aday.isim}
+                      title={aday.isim}
+                      src={imgFinder(aday.id).src}
+                      className="party-img"
+                    />
+                  </span>
+                  <span className="vote-name">{aday.isim}</span>
+                  <Group className="numerator" spacing={5}>
+                    <ActionIcon
+                      size={36}
+                      variant="filled"
+                      onClick={() => changeVoteNum("dec", aday.id)}
+                    >
+                      -
+                    </ActionIcon>
+                    <NumberInput
+                      hideControls
+                      min={0}
+                      styles={{
+                        input: {
+                          width: rem(50),
+                          textAlign: "center",
+                          paddingLeft: "8px",
+                          paddingRight: "8px",
+                        },
+                      }}
+                      id={aday.id}
+                      //@ts-ignore
+                      value={sonuclar[aday.id] || 0}
+                      defaultValue={0}
+                    />
+                    <ActionIcon
+                      size={36}
+                      variant="filled"
+                      onClick={() => changeVoteNum("inc", aday.id)}
+                    >
+                      +
+                    </ActionIcon>
+                  </Group>
+                </div>
+              );
+            }
+          )}
+          {/* {isCumhur
+            ? Partiler.filter((parti) => parti.type === "a").map((aday) => {
                 return (
                   <div key={aday.id} className="col-12 px-0 vote-box">
                     <span style={{ minWidth: "36px" }}>
@@ -308,7 +399,7 @@ export default function SayimDokumCetveli() {
                       </Group>
                     </div>
                   );
-              })}
+              })} */}
         </div>
         {!isCumhur && (
           <div className="row mb-3">
@@ -320,15 +411,62 @@ export default function SayimDokumCetveli() {
           </div>
         )}
         <div className="row mb-3 sandik-bilgisi">
+          <div className="col-12 px-0">
+            <Select
+              label="İl"
+              id="il-select"
+              data={ilListe}
+              value={titleData.il}
+              onChange={(il) => {
+                if (il !== titleData.il)
+                  setTitleData({
+                    ...titleData,
+                    il: il ?? "",
+                    ilce: "",
+                  });
+              }}
+            />
+          </div>
+          <div className="col-12 px-0">
+            <Select
+              label="İlçe"
+              id="ilce-select"
+              data={ilceListe(titleData.il)}
+              value={titleData.ilce}
+              onChange={(ilce) => {
+                setTitleData({ ...titleData, ilce: ilce ?? "" });
+              }}
+              disabled={ilceListe(titleData.il).length < 1}
+            />
+          </div>
+
           <div className="col-6 pl-0">
             <TextInput
               placeholder="Ör: Atatürk Anadolu Lisesi"
               label="Okul İsmi"
               id="school-name"
+              value={titleData.okul}
+              onChange={(okul) => {
+                setTitleData({
+                  ...titleData,
+                  okul: okul.currentTarget.value ?? "",
+                });
+              }}
             />
           </div>
           <div className="col-6 pr-0">
-            <TextInput label="Sandık Numarası" id="sandik-number" />
+            <NumberInput
+              label="Sandık Numarası"
+              id="sandik-number"
+              value={titleData.sandik}
+              min={0}
+              onChange={(sandik) => {
+                setTitleData({
+                  ...titleData,
+                  sandik: sandik ? sandik : 0,
+                });
+              }}
+            />
           </div>
           <div className="col-12 mt-3 d-flex justify-content-center">
             <Button variant="light" onClick={saveSandik}>
@@ -339,52 +477,49 @@ export default function SayimDokumCetveli() {
         {sandikData.length > 0 && (
           <div className="row">
             <p>Kayıtlı Sandıklar</p>
-            {sandikData.map((data, i) => {
-              const html = Object.entries(data)
-                .sort()
-                .map(([key, value]: any[]) => {
-                  if (value)
-                    if (key === "aaSchoolName" || key === "abSandikNumber")
-                      return (
-                        <p key={key} className="data-header" style={{}}>
-                          {value}
-                        </p>
-                      );
-                    else if (key === "zzTotal")
-                      return (
-                        <p key={key} className="data-header">
-                          {nameFinder(key)}
-                          <span className="bolder">{value}</span>
-                        </p>
-                      );
-                    else
-                      return (
-                        <div
-                          key={key}
-                          style={{
-                            marginBottom: "2px",
-                          }}
-                          className="vote-box"
-                        >
-                          <span style={{ minWidth: "54px" }}>
-                            <img
-                              alt={value}
-                              title={value}
-                              src={imgFinder(key).src}
-                              className="party-img"
-                            />
-                          </span>
-                          <span>{`${nameFinder(key)}: `}</span>
-                          <span className="bolder">{value}</span>
-                        </div>
-                      );
-                });
-              return (
-                <div key={i} className="col-12 col-md-6 data-box">
-                  {html}
-                </div>
-              );
-            })}
+            <Grid gutter="sm">
+              {sandikData.map((data: any, i) => {
+                const title =
+                  [data.title.il, data.title.ilce, data.title.okul]
+                    .filter(Boolean)
+                    .join(" ") || `Sandık ${i + 1}`;
+                return (
+                  <Grid.Col key={i} sm={12} md={6}>
+                    <Card shadow="sm" withBorder>
+                      <Stack spacing="md">
+                        <Group position="apart">
+                          <Title order={4}>{title}</Title>
+                          {data.title.sandik && (
+                            <Badge>{data.title.sandik}</Badge>
+                          )}
+                        </Group>
+                        {Object.entries(data.results).map(([key, value]) => {
+                          const name = nameFinder(key);
+                          return (
+                            <Group key={key}>
+                              <Image
+                                alt={name as string}
+                                src={imgFinder(key).src}
+                                width={36}
+                                height={44}
+                              />
+                              {name}: {value as number}
+                            </Group>
+                          );
+                        })}
+                        Toplam:{" "}
+                        {
+                          Object.values(data.results).reduce(
+                            (a: any, b: any) => a + b,
+                            0
+                          ) as number
+                        }
+                      </Stack>
+                    </Card>
+                  </Grid.Col>
+                );
+              })}
+            </Grid>
             <div className="col-12 my-3 d-flex justify-content-center">
               <Button variant="light" onClick={deleteSandikData}>
                 Cihazındaki Kayıtları Sıfırla
