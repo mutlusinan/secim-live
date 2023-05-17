@@ -480,35 +480,35 @@ export default function SayimDokumCetveli() {
               {sandikData.map((data: any, i) => (
                 <Grid.Col key={i} sm={12} md={6}>
                   <Card shadow="sm" withBorder>
-                    <Group position="apart">
-                      <Title order={4}>
-                        {data.title.il} {data.title.ilce} {data.title.okul}
-                      </Title>
-                      <Badge>{data.title.sandik}</Badge>
-                      <Stack spacing="sm">
-                        {Object.entries(data.results).map(([key, value]) => {
-                          const name = nameFinder(key);
-                          return (
-                            <Group key={key}>
-                              <Image
-                                alt={name as string}
-                                src={imgFinder(key).src}
-                                width={36}
-                                height={44}
-                              />
-                              {name}: {value as number}
-                            </Group>
-                          );
-                        })}
-                        Toplam:{" "}
-                        {
-                          Object.values(data.results).reduce(
-                            (a: any, b: any) => a + b,
-                            0
-                          ) as number
-                        }
-                      </Stack>
-                    </Group>
+                    <Stack spacing="md">
+                      <Group position="apart">
+                        <Title order={4}>
+                          {data.title.il} {data.title.ilce} {data.title.okul}
+                        </Title>
+                        <Badge>{data.title.sandik}</Badge>
+                      </Group>
+                      {Object.entries(data.results).map(([key, value]) => {
+                        const name = nameFinder(key);
+                        return (
+                          <Group key={key}>
+                            <Image
+                              alt={name as string}
+                              src={imgFinder(key).src}
+                              width={36}
+                              height={44}
+                            />
+                            {name}: {value as number}
+                          </Group>
+                        );
+                      })}
+                      Toplam:{" "}
+                      {
+                        Object.values(data.results).reduce(
+                          (a: any, b: any) => a + b,
+                          0
+                        ) as number
+                      }
+                    </Stack>
                   </Card>
                 </Grid.Col>
               ))}
