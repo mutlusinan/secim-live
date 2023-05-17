@@ -477,41 +477,47 @@ export default function SayimDokumCetveli() {
           <div className="row">
             <p>Kayıtlı Sandıklar</p>
             <Grid gutter="sm">
-              {sandikData.map((data: any, i) => (
-                <Grid.Col key={i} sm={12} md={6}>
-                  <Card shadow="sm" withBorder>
-                    <Stack spacing="md">
-                      <Group position="apart">
-                        <Title order={4}>
-                          {data.title.il} {data.title.ilce} {data.title.okul}
-                        </Title>
-                        <Badge>{data.title.sandik}</Badge>
-                      </Group>
-                      {Object.entries(data.results).map(([key, value]) => {
-                        const name = nameFinder(key);
-                        return (
-                          <Group key={key}>
-                            <Image
-                              alt={name as string}
-                              src={imgFinder(key).src}
-                              width={36}
-                              height={44}
-                            />
-                            {name}: {value as number}
-                          </Group>
-                        );
-                      })}
-                      Toplam:{" "}
-                      {
-                        Object.values(data.results).reduce(
-                          (a: any, b: any) => a + b,
-                          0
-                        ) as number
-                      }
-                    </Stack>
-                  </Card>
-                </Grid.Col>
-              ))}
+              {sandikData.map((data: any, i) => {
+                const title =
+                  [data.title.il, data.title.ilce, data.title.okul]
+                    .filter(Boolean)
+                    .join(" ") || `Sandık ${i + 1}`;
+                return (
+                  <Grid.Col key={i} sm={12} md={6}>
+                    <Card shadow="sm" withBorder>
+                      <Stack spacing="md">
+                        <Group position="apart">
+                          <Title order={4}>{title}</Title>
+                          {data.title.sandik && (
+                            <Badge>{data.title.sandik}</Badge>
+                          )}
+                        </Group>
+                        {Object.entries(data.results).map(([key, value]) => {
+                          const name = nameFinder(key);
+                          return (
+                            <Group key={key}>
+                              <Image
+                                alt={name as string}
+                                src={imgFinder(key).src}
+                                width={36}
+                                height={44}
+                              />
+                              {name}: {value as number}
+                            </Group>
+                          );
+                        })}
+                        Toplam:{" "}
+                        {
+                          Object.values(data.results).reduce(
+                            (a: any, b: any) => a + b,
+                            0
+                          ) as number
+                        }
+                      </Stack>
+                    </Card>
+                  </Grid.Col>
+                );
+              })}
             </Grid>
             <div className="col-12 my-3 d-flex justify-content-center">
               <Button variant="light" onClick={deleteSandikData}>
