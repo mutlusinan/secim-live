@@ -178,7 +178,7 @@ export default function SayimDokumCetveli() {
         </div>
       </Drawer>
       <div className="container">
-        <div className="row mb-4">
+        {/* <div className="row mb-4">
           <Tabs defaultValue="cb">
             <Tabs.List grow position="apart">
               <Tabs.Tab
@@ -204,7 +204,7 @@ export default function SayimDokumCetveli() {
               </Tabs.Tab>
             </Tabs.List>
           </Tabs>
-        </div>
+        </div> */}
         <div className="row mb-3 sandik-bilgisi">
           <div className="col-12 px-0">
             <TextInput label="Toplam Oy" defaultValue={total} />
@@ -212,7 +212,9 @@ export default function SayimDokumCetveli() {
         </div>
         <div className="row">
           {isCumhur
-            ? Partiler.filter((parti) => parti.type === "a").map((aday) => {
+            ? Partiler.filter(
+                (parti) => parti.type === "a" && parti.runoff
+              ).map((aday) => {
                 return (
                   <div key={aday.id} className="col-12 px-0 vote-box">
                     <span style={{ minWidth: "36px" }}>
