@@ -10,7 +10,15 @@ import {
   Select,
   SelectItem,
   Drawer,
+  Card,
+  Text,
+  Badge,
+  Grid,
+  Stack,
+  Space,
+  Title,
 } from "@mantine/core";
+import Image from "next/image";
 import { useLocalStorage, useDisclosure } from "@mantine/hooks";
 import Partiler from "../assets/data/Partiler.json";
 import ilcemahalle from "../assets/data/ilcemahalle.json";
@@ -149,61 +157,6 @@ export default function SayimDokumCetveli() {
     if (key === "kk") return kkLogo;
     if (key === "so") return soLogo;
     else return headerLogo;
-  };
-
-  const table = (data: any, i: number) => {
-    const html = Object.entries(data.results);
-
-    const arr = [];
-    const titleName: string[] = [];
-    Object.entries(data.title).map(([key, value]: any[]) => {
-      value && titleName.push(value);
-    });
-
-    arr.push(
-      <p key={i} className="data-header" style={{}}>
-        {titleName.join(" - ")}
-      </p>
-    );
-    html.sort().map(([key, value]: any[]) => {
-      arr.push(
-        <div
-          key={key}
-          style={{
-            marginBottom: "2px",
-          }}
-          className="vote-box"
-        >
-          <span style={{ minWidth: "54px" }}>
-            <img
-              alt={value}
-              title={value}
-              src={imgFinder(key).src}
-              className="party-img"
-            />
-          </span>
-          <span>{`${nameFinder(key)}: `}</span>
-          <span className="bolder">{value}</span>
-        </div>
-      );
-    });
-    arr.push(
-      <p key={i + "-" + data.toplam} className="data-header">
-        {"Toplam: "}
-        <span className="bolder">{data.toplam}</span>
-      </p>
-    );
-
-    return [
-      <div
-        key={i}
-        className={
-          "col-12 col-md data-box" + (i % 2 === 0 ? " me-md-1" : " ms-md-1")
-        }
-      >
-        {arr}
-      </div>,
-    ];
   };
 
   function multiSelectData() {
@@ -523,9 +476,43 @@ export default function SayimDokumCetveli() {
         {sandikData.length > 0 && (
           <div className="row">
             <p>Kayıtlı Sandıklar</p>
-            {sandikData.map((data, i) => {
-              return table(data, i);
-            })}
+            <Grid gutter="sm">
+              {sandikData.map((data: any, i) => (
+                <Grid.Col key={i} sm={12} md={6}>
+                  <Card shadow="sm" withBorder>
+                    <Group position="apart">
+                      <Title order={4}>
+                        {data.title.il} {data.title.ilce} {data.title.okul}
+                      </Title>
+                      <Badge>{data.title.sandik}</Badge>
+                      <Stack spacing="sm">
+                        {Object.entries(data.results).map(([key, value]) => {
+                          const name = nameFinder(key);
+                          return (
+                            <Group key={key}>
+                              <Image
+                                alt={name as string}
+                                src={imgFinder(key).src}
+                                width={36}
+                                height={44}
+                              />
+                              {name}: {value as number}
+                            </Group>
+                          );
+                        })}
+                        Toplam:{" "}
+                        {
+                          Object.values(data.results).reduce(
+                            (a: any, b: any) => a + b,
+                            0
+                          ) as number
+                        }
+                      </Stack>
+                    </Group>
+                  </Card>
+                </Grid.Col>
+              ))}
+            </Grid>
             <div className="col-12 my-3 d-flex justify-content-center">
               <Button variant="light" onClick={deleteSandikData}>
                 Cihazındaki Kayıtları Sıfırla
