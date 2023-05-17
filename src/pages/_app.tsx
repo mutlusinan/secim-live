@@ -30,7 +30,6 @@ export default function App(props: AppProps) {
   useEffect(() => {
     const handleRouteChange = (url: any) => {
       ReactGA.pageview(url);
-      console.log("change");
     };
     router.events.on("routeChangeComplete", handleRouteChange);
     return () => {
