@@ -11,6 +11,7 @@ import {
 } from "@mantine/core";
 import ReactGA from "react-ga";
 import { useLocalStorage } from "@mantine/hooks";
+import { useEffect } from "react";
 
 export default function App(props: AppProps) {
   const { Component, pageProps } = props;
@@ -22,8 +23,11 @@ export default function App(props: AppProps) {
   const toggleColorScheme = (value?: ColorScheme) =>
     setColorScheme(value || (colorScheme === "dark" ? "light" : "dark"));
 
-  const tracking_id = "G-CK70ZT38GK";
-  ReactGA.initialize(tracking_id);
+  useEffect(() => {
+    const tracking_id = "G-CK70ZT38GK";
+    ReactGA.initialize(tracking_id);
+    ReactGA.pageview(window.location.pathname + window.location.search);
+  }, []);
 
   return (
     <>
