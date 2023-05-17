@@ -35,6 +35,6 @@
   { "isim": "Bağımsız-5", "id": "bgmsz-5", "type": "p" },
   { "isim": "Recep Tayyip Erdoğan", "id": "rte", "type": "a", "runoff": true },
   { "isim": "Muharrem İnce", "id": "mi", "type": "a" },
-  { "isim": "Kemal Kılıçdaroğlu", "id": "kk", "type": "a" },
-  { "isim": "Sinan Oğan", "id": "so", "type": "a", "runoff": true }
+  { "isim": "Kemal Kılıçdaroğlu", "id": "kk", "type": "a" , "runoff": true },
+  { "isim": "Sinan Oğan", "id": "so", "type": "a"}
 ]
