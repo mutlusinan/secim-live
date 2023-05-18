@@ -31,7 +31,13 @@ export default function KontrolListesi() {
 
   useEffect(() => scrollIntoView({ alignment: "center" }), [scrollIntoView]);
   useEffect(() => setCheckedList(checkStorage), [checkStorage]);
-  useEffect(() => nprogress.set((lastChecked / 55) * 100), [lastChecked]);
+  useEffect(
+    () =>
+      isOncesi
+        ? nprogress.set(0)
+        : nprogress.set((lastChecked / 55) * 100),
+    [lastChecked, isOncesi]
+  );
 
   return (
     <>
