@@ -1,19 +1,12 @@
-import { useEffect } from "react";
+import Script from "next/script";
 
 export default function Iletisim() {
-  useEffect(() => loadPaperform(), []);
-  const loadPaperform = () => {
-    const script = document.createElement("script");
-    script.src = "https://paperform.co/__embed.min.js";
-    script.async = true;
-    document.body.appendChild(script);
-  };
-
   return (
     <div
       className="container"
       style={{ textAlign: "center", marginTop: "100px" }}
     >
+      <Script src="https://paperform.co/__embed.min.js" />
       <div data-paperform-id="3ueyiaaa" />
       <h4>
         <a target="_blank" href="https://github.com/mutlusinan/secim-live">
