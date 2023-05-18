@@ -1,18 +1,20 @@
-import {} from "react";
+import { useEffect } from "react";
 
 export default function Iletisim() {
+  useEffect(() => loadPaperform(), []);
+  const loadPaperform = () => {
+    const script = document.createElement("script");
+    script.src = "https://paperform.co/__embed.min.js";
+    script.async = true;
+    document.body.appendChild(script);
+  };
+
   return (
     <div
       className="container"
       style={{ textAlign: "center", marginTop: "100px" }}
     >
-      <h1>İletişim</h1>
-      <h3 style={{ fontWeight: 700 }}>
-        Eksikleri, istekleri, her türlü dilek ve şikayetleri iletmek için:
-      </h3>
-      <h4>
-        <a href="mailto:secim.live.info@gmail.com">secim.live.info@gmail.com</a>
-      </h4>
+      <div data-paperform-id="3ueyiaaa" />
       <h4>
         <a target="_blank" href="https://github.com/mutlusinan/secim-live">
           <svg

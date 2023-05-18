@@ -1,3 +1,4 @@
+import { nprogress, NavigationProgress } from "@mantine/nprogress";
 import { Table, Modal, Tabs } from "@mantine/core";
 import CheckList from "../assets/data/Checklist.json";
 import ChecklistItem from "../components/checklistItem";
@@ -30,9 +31,11 @@ export default function KontrolListesi() {
 
   useEffect(() => scrollIntoView({ alignment: "center" }), [scrollIntoView]);
   useEffect(() => setCheckedList(checkStorage), [checkStorage]);
+  useEffect(() => nprogress.set((lastChecked / 55) * 100), [lastChecked]);
 
   return (
     <>
+      <NavigationProgress />
       <Modal opened={opened} onClose={close} title="Sıralama">
         <p>Bazı adımları atlıyorsunuz. Devam etmek istiyor musunuz?</p>
         <button
