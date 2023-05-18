@@ -23,19 +23,17 @@ export default function KontrolListesi() {
   const [opened, { open, close }] = useDisclosure(false);
   const [atlananSayi, setAtlananSayi] = useState(0);
   const [isOncesi, setIsOncesi] = useState(false);
-  const [checkedList, setCheckedList] = useState([0]);
 
   const { scrollIntoView, targetRef } = useScrollIntoView<HTMLTableRowElement>({
     duration: 0,
   });
 
   useEffect(() => scrollIntoView({ alignment: "center" }), [scrollIntoView]);
-  useEffect(() => setCheckedList(checkStorage), [checkStorage]);
   useEffect(
     () =>
       isOncesi
         ? nprogress.set(0)
-        : nprogress.set((lastChecked / 55) * 100),
+        : nprogress.set((lastChecked / CheckList.secimgunu.length) * 100),
     [lastChecked, isOncesi]
   );
 
@@ -90,16 +88,15 @@ export default function KontrolListesi() {
                   key={item.id}
                   id={item.id}
                   item={item.item}
-                  checkId={checkedList.find((no) => item.id === no) ?? 0}
+                  checkId={checkStorage.find((no) => item.id === no) ?? 0}
                   checkItem={(number: number) => {
-                    const temp = checkedList;
-                    const ind = checkedList.indexOf(number);
+                    const temp = checkStorage;
+                    const ind = checkStorage.indexOf(number);
                     if (ind === -1) {
                       temp.push(number);
                     } else {
                       temp.splice(ind, 1);
                     }
-                    setCheckedList(temp);
                     setCheckStorage(temp);
                   }}
                   irregular
