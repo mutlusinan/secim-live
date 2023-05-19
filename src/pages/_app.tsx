@@ -9,10 +9,9 @@ import {
   ColorSchemeProvider,
   ColorScheme,
 } from "@mantine/core";
-import ReactGA from "react-ga";
 import { useLocalStorage } from "@mantine/hooks";
-import { useEffect } from "react";
 import { useRouter } from "next/router";
+import Script from "next/script";
 
 export default function App(props: AppProps) {
   const router = useRouter();
@@ -24,18 +23,6 @@ export default function App(props: AppProps) {
   });
   const toggleColorScheme = (value?: ColorScheme) =>
     setColorScheme(value || (colorScheme === "dark" ? "light" : "dark"));
-  const tracking_id = "G-CK70ZT38GK";
-  ReactGA.initialize(tracking_id);
-
-  useEffect(() => {
-    const handleRouteChange = (url: any) => {
-      ReactGA.pageview(url);
-    };
-    router.events.on("routeChangeComplete", handleRouteChange);
-    return () => {
-      router.events.off("routeChangeComplete", handleRouteChange);
-    };
-  }, [router.events]);
 
   return (
     <>
@@ -87,6 +74,19 @@ export default function App(props: AppProps) {
           </Layout>
         </MantineProvider>
       </ColorSchemeProvider>
+      <Script
+        src="https://www.googletagmanager.com/gtag/js?id=G-CK70ZT38GK"
+        strategy="afterInteractive"
+      />
+      <Script id="google-analytics" strategy="afterInteractive">
+        {`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){window.dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'G-CK70ZT38GK');
+        `}
+      </Script>
     </>
   );
 }
