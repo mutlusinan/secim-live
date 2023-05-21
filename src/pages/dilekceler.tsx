@@ -13,8 +13,6 @@ import { useState } from "react";
 import DilekceList from "../assets/data/Dilekceler.json";
 import SSS from "../assets/data/SSS.json";
 import Link from "next/link";
-import rehypeRaw from "rehype-raw";
-import ReactMarkdown from "react-markdown";
 
 export default function Dilekceler() {
   const [tab, setTab] = useState("sss");
@@ -82,15 +80,9 @@ export default function Dilekceler() {
             <Accordion.Item key={soru.tag} value={soru.tag}>
               <Accordion.Control>{soru.question}</Accordion.Control>
               <Accordion.Panel className="accordion-panel">
-                <ReactMarkdown
-                  components={{
-                    p: React.Fragment,
-                  }}
-                  rehypePlugins={[rehypeRaw]}
-                >
-                  {soru.answer}
-                </ReactMarkdown>
-                <br />
+                <div
+                  dangerouslySetInnerHTML={{ __html: soru.answer }}
+                ></div>
                 <br />
                 <Button
                   style={{ width: "100%" }}
