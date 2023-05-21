@@ -1,6 +1,13 @@
 import React from "react";
 import PDFViewer from "@/components/PDFViewer";
-import { Button, Drawer, TextInput, Accordion } from "@mantine/core";
+import {
+  Button,
+  Drawer,
+  TextInput,
+  Accordion,
+  Tabs,
+  Badge,
+} from "@mantine/core";
 import { useDisclosure, useScrollIntoView } from "@mantine/hooks";
 import { useState } from "react";
 import DilekceList from "../assets/data/Dilekceler.json";
@@ -10,6 +17,7 @@ import rehypeRaw from "rehype-raw";
 import ReactMarkdown from "react-markdown";
 
 export default function Dilekceler() {
+  const [tab, setTab] = useState("sss");
   const [file, setFile] = useState("");
   const [page, setPage] = useState(1);
   const [search, setSearch] = useState("");
@@ -54,62 +62,72 @@ export default function Dilekceler() {
         onChange={(e: any) => setSearch(e.target.value.toLocaleLowerCase("tr"))}
         className="arama-input"
       />
-      {!(filteredDilekce.length === 0) && <Button
-        style={{ width: "100%" }}
-        variant="outline"
-        onClick={() => scrollIntoView()}
-      >
-        Dilekçelere bak
-      </Button>}
-      <Accordion transitionDuration={300} className="mb-4">
-        {filteredSSS.map((soru) => (
-          <Accordion.Item key={soru.tag} value={soru.tag}>
-            <Accordion.Control>{soru.question}</Accordion.Control>
-            <Accordion.Panel className="accordion-panel">
-              <ReactMarkdown
-                components={{
-                  p: React.Fragment,
-                }}
-                rehypePlugins={[rehypeRaw]}
-              >
-                {soru.answer}
-              </ReactMarkdown>
-              <br />
-              <br />
-              <Button
-                style={{ width: "100%" }}
-                variant="outline"
-                onClick={() => {
-                  setFile("/dilekce/135.pdf");
-                  setPage(soru.page ?? 1);
-                  open();
-                }}
-              >
-                İlgili yeri göster
-              </Button>
-            </Accordion.Panel>
-          </Accordion.Item>
-        ))}
-      </Accordion>
-      {filteredDilekce.map((dilekce, i) => (
-        <div
-          key={dilekce.id}
-          className="col-12 mt-2 mb-1 dilekce-button"
-          ref={i === 0 ? targetRef : null}
-        >
-          <Button
-            style={{ width: "100%" }}
-            variant="outline"
-            onClick={() => {
-              setPage(1);
-              setFile(dilekce.link);
-              open();
-            }}
+      <div className="row mb-4 dilekceler-tabs">
+        <Tabs defaultValue={tab}>
+          <Tabs.List grow position="apart">
+            <Tabs.Tab onClick={() => setTab("sss")} value="sss">
+              Sık Sorulan Sorular
+              <Badge>{filteredSSS.length}</Badge>
+            </Tabs.Tab>
+            <Tabs.Tab onClick={() => setTab("dilekce")} value="dilekce">
+              Dilekçeler
+              <Badge>{filteredDilekce.length}</Badge>
+            </Tabs.Tab>
+          </Tabs.List>
+        </Tabs>
+      </div>
+      {tab === "sss" && (
+        <Accordion transitionDuration={300} className="mb-4">
+          {filteredSSS.map((soru) => (
+            <Accordion.Item key={soru.tag} value={soru.tag}>
+              <Accordion.Control>{soru.question}</Accordion.Control>
+              <Accordion.Panel className="accordion-panel">
+                <ReactMarkdown
+                  components={{
+                    p: React.Fragment,
+                  }}
+                  rehypePlugins={[rehypeRaw]}
+                >
+                  {soru.answer}
+                </ReactMarkdown>
+                <br />
+                <br />
+                <Button
+                  style={{ width: "100%" }}
+                  variant="outline"
+                  onClick={() => {
+                    setFile("/dilekce/135.pdf");
+                    setPage(soru.page ?? 1);
+                    open();
+                  }}
+                >
+                  İlgili yeri göster
+                </Button>
+              </Accordion.Panel>
+            </Accordion.Item>
+          ))}
+        </Accordion>
+      )}
+      {tab === "dilekce" &&
+        filteredDilekce.map((dilekce, i) => (
+          <div
+            key={dilekce.id}
+            className="col-12 mt-2 mb-1 dilekce-button"
+            ref={i === 0 ? targetRef : null}
           >
-            {dilekce.text}
-          </Button>
-        </div>
-      ))}
+            <Button
+              style={{ width: "100%" }}
+              variant="outline"
+              onClick={() => {
+                setPage(1);
+                setFile(dilekce.link);
+                open();
+              }}
+            >
+              {dilekce.text}
+            </Button>
+          </div>
+        ))}
 
       {filteredDilekce.length === 0 && filteredSSS.length === 0 && (
         <p style={{ color: "gray" }}>
