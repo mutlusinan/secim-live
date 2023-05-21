@@ -1,7 +1,7 @@
 import React from "react";
 import PDFViewer from "@/components/PDFViewer";
 import { Button, Drawer, TextInput, Accordion } from "@mantine/core";
-import { useDisclosure } from "@mantine/hooks";
+import { useDisclosure, useScrollIntoView } from "@mantine/hooks";
 import { useState } from "react";
 import DilekceList from "../assets/data/Dilekceler.json";
 import SSS from "../assets/data/SSS.json";
@@ -15,12 +15,16 @@ export default function Dilekceler() {
   const [search, setSearch] = useState("");
   const [opened, { open, close }] = useDisclosure(false);
 
+  const { scrollIntoView, targetRef } = useScrollIntoView<HTMLTableRowElement>({
+    duration: 0,
+  });
+
   const filteredDilekce = DilekceList.filter((dilekce) =>
-    (dilekce.text + " " + dilekce.tags).toLowerCase().includes(search)
+    (dilekce.text + " " + dilekce.tags).toLocaleLowerCase("tr").includes(search)
   );
   const filteredSSS = SSS.filter((soru) =>
     (soru.question + " " + soru.answer + " " + soru.tags)
-      .toLowerCase()
+      .toLocaleLowerCase("tr")
       .includes(search)
   );
   return (
@@ -47,8 +51,16 @@ export default function Dilekceler() {
         style={{ marginBottom: "20px" }}
         placeholder="Ör: Müşahit"
         label="Arama"
-        onChange={(e: any) => setSearch(e.target.value.toLowerCase())}
+        onChange={(e: any) => setSearch(e.target.value.toLocaleLowerCase("tr"))}
+        className="arama-input"
       />
+      {!(filteredDilekce.length === 0) && <Button
+        style={{ width: "100%" }}
+        variant="outline"
+        onClick={() => scrollIntoView()}
+      >
+        Dilekçelere bak
+      </Button>}
       <Accordion transitionDuration={300} className="mb-4">
         {filteredSSS.map((soru) => (
           <Accordion.Item key={soru.tag} value={soru.tag}>
@@ -79,8 +91,12 @@ export default function Dilekceler() {
           </Accordion.Item>
         ))}
       </Accordion>
-      {filteredDilekce.map((dilekce) => (
-        <div key={dilekce.id} className="col-12 mt-2 mb-1 dilekce-button">
+      {filteredDilekce.map((dilekce, i) => (
+        <div
+          key={dilekce.id}
+          className="col-12 mt-2 mb-1 dilekce-button"
+          ref={i === 0 ? targetRef : null}
+        >
           <Button
             style={{ width: "100%" }}
             variant="outline"
