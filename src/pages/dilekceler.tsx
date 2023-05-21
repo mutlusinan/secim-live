@@ -19,7 +19,9 @@ export default function Dilekceler() {
     (dilekce.text + " " + dilekce.tags).toLowerCase().includes(search)
   );
   const filteredSSS = SSS.filter((soru) =>
-    (soru.question + " " + soru.answer + " " + soru.tags).toLowerCase().includes(search)
+    (soru.question + " " + soru.answer + " " + soru.tags)
+      .toLowerCase()
+      .includes(search)
   );
   return (
     <div className="container" style={{ textAlign: "center" }}>
@@ -83,6 +85,7 @@ export default function Dilekceler() {
             style={{ width: "100%" }}
             variant="outline"
             onClick={() => {
+              setPage(1);
               setFile(dilekce.link);
               open();
             }}

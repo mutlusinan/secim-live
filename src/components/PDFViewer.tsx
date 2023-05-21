@@ -26,27 +26,31 @@ export default function PDFViewer(props: PDFViewerProps) {
       >
         <Button
           variant={"outline"}
-          style={{ marginBottom: "10px"}}
+          style={{ marginBottom: "10px" }}
           onClick={() => props.close()}
         >
           Geri Dön
         </Button>
-        <br />
-        <Button
-          variant={"filled"}
-          style={{ marginBottom: "10px", marginRight: "10px" }}
-          onClick={() => setPage(page - 1)}
-          disabled={page === 1}
-        >
-          Önceki Sayfa
-        </Button>
-        <Button
-          variant={"filled"}
-          style={{ marginBottom: "10px" }}
-          onClick={() => setPage(page + 1)}
-        >
-          Sonraki Sayfa
-        </Button>
+        {props.link === "/dilekce/135.pdf" && (
+          <>
+            <br />
+            <Button
+              variant={"filled"}
+              style={{ marginBottom: "10px", marginRight: "10px" }}
+              onClick={() => setPage(page - 1)}
+              disabled={page === 1}
+            >
+              Önceki Sayfa
+            </Button>
+            <Button
+              variant={"filled"}
+              style={{ marginBottom: "10px" }}
+              onClick={() => setPage(page + 1)}
+            >
+              Sonraki Sayfa
+            </Button>
+          </>
+        )}
       </div>
       <div style={{ textAlign: "center" }}>
         <Button

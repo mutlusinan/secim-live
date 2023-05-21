@@ -2,6 +2,11 @@
     transition: .4s;
 }
 
+:root {
+    --bs-link-color: #ef3044 !important;
+    --bs-link-hover-color: #F1485A !important;
+}
+
 .header-logo {
     display: none;
 }
