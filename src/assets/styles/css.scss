@@ -182,6 +182,17 @@ img.party-img {
     display: none;
 }
 
+.accordion-panel .mantine-Accordion-content {
+    text-align: start;
+    border-radius: 16px;
+    background: #9191911f;
+    margin: 15px;
+}
+
+.mantine-Accordion-chevron>svg {
+    color: #EF3044;
+}
+
 @media (max-width: 550px) {
 
     .pdf-viewer-mobile-show {

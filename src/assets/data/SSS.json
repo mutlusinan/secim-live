@@ -1,0 +1,130 @@
+[
+  {
+    "id": 101,
+    "tag": "baskan-gelmedi",
+    "question": "Seçim başlamadan önce sandık kurulu üyesi/başkanı gelmezse ne olur?",
+    "answer": "Sandık kurulu başkanının göreve gelmemesi halinde, kamu görevlileri arasından belirlenen üye, bu üyenin de bulunmaması durumunda en yaşlı üye kurula başkanlık eder. <b>(298/22, 135/3)</b>",
+    "tags": "",
+    "page": 3
+  },
+  {
+    "id": 102,
+    "tag": "ilce-secim-kurulu",
+    "question": "Sandık kurulu başkanı, ilçe seçim kuruluna giderken beni yanına almıyor.",
+    "answer": "Sandık kurulunun bağlı olduğu ilçe seçim kuruluna, sandık kurulu başkanı ve siyasi partili üyeler arasından ad çekme ile seçilecek en az iki üye tarafından götürülür. Kurulun diğer üyeleri ile müşahitler de isterlerse ve taşıtta yer varsa veya taşıt kendileri tarafından sağlanmak suretiyle katılabilirler. <b>(298/71-3-4, 135/7)</b>",
+    "tags": "",
+    "page": 4
+  },
+  {
+    "id": 103,
+    "tag": "kurul-uye-sayisi",
+    "question": "Sandık kurulu üyeleri gelmedi, müşahit olarak sandık kuruluna girebilir miyim? O sandıkta oy kullanabilir miyim?",
+    "answer": "Sandık kurulu üyelerinin gelmemesi durumunda yerine yedek üyelerden biri getirilir. Bu dahi mümkün olmaz ve kurul üyeleri sayısı <b>(başkan hariç) üçten aşağı düşerse</b> bu konu tutanağa geçirilir ve eksiklikler, başkanın seçeceği kimselerle tamamlanır. <b>Sandık kurulu başkanı ve üç üyenin bulunması halinde</b> tamamlanma yoluna gidilmez. Gelmeyen üye gelse dahi görevlendirilen kişi görevine devam eder.  <b>(298/73, 135/12)</b> Dışarıdan görevlendilen kişiler o sandıktan oy kullanamazlar. ",
+    "tags": "",
+    "page": 7
+  },
+  {
+    "id": 104,
+    "tag": "telefon",
+    "question": "Oy veren kişiler kabine telefonla girebilir mi?",
+    "answer": "Telefon, fotoğraf makinesi gibi görüntü kaydedici cihazlarla oy verme yerine girilmesinin yasak olduğu ve cezasının bulunduğu, bu tür cihazların oy verme işlemi bittikten sonra iade edilmek üzere sandık kuruluna bırakılması gerektiği belirtilmelidir. <b>(298/92, 135/13, 28)</b>",
+    "tags": "",
+    "page": 7
+  },
+  {
+    "id": 105,
+    "tag": "kolluk-kuvveti",
+    "question": "Çevredeki insanlar sandık kurulundaki insanların görev yapmasına engel oluyorlar / Polis sandık bölgesinden çıkmıyor.",
+    "answer": "Sandık kurulunun görevini yapmasına engel olmaya kalkışanları başkan uyarır. Bu uyarının gereğini yerine getirmeyen kimse, kolluk gücü çağrılarak sandık çevresinden uzaklaştırılır. Çağrılan kolluk güçleri, başkanın talebine veya kurulun kararına uymak zorunda olup, sebep ortadan kalkınca sandık çevresinden ayrılır. <b>(298/82-3-7, 135/19)</b>",
+    "tags": "polis, kolluk kuvvetleri, kuvveti, silah",
+    "page": 8
+  },
+  {
+    "id": 106,
+    "tag": "uniforma",
+    "question": "Askerler/polisler üniformayla oy kullanabilirler mi?",
+    "answer": "Seçimin güvenliğini sağlamakla görevli kolluk güçleri hariç, özel güvenlik görevlileri ve belediye zabıtaları gibi görevliler de dâhil olmak üzere resmî üniforma ve silah taşıyan kişiler, sandığın konulduğu bina, yapı ve bunların müştemilatına giremezler. <b>(298/82-8, 135/19)</b>",
+    "tags": "asker, polis, üniforma, uniforma, rozet, silah",
+    "page": 8
+  },
+  {
+    "id": 107,
+    "tag": "secim-bitti",
+    "question": "Saat 17:00'den sonra gelen kişi oy kullanabilir mi? Sırada olanlar oy kullanabilir mi?",
+    "answer": "Oylarını vermek üzere bekleyen seçmenler varsa, sandık kurulu başkanı bunları saydıktan ve kimliklerini aldıktan sonra sıra ile oylarını kullanmalarına izin verir. Yüksek Seçim Kurulunun belirlediği bitiş saatinden sonra gelen seçmen oy kullanamaz. <b>(298/89, 96, 135/25)</b>",
+    "tags": "",
+    "page": 11
+  },
+  {
+    "id": 108,
+    "tag": "kimlik-belgesi",
+    "question": "Kişiler hangi belgelerle oy kullanabilir?",
+    "answer": "Sandık başına gelen seçmen; Türkiye Cumhuriyeti kimlik numarasını taşıyan; Türkiye Cumhuriyeti Kimlik Kartı, Geçici Kimlik Belgesi, nüfus cüzdanı, resmî dairelerce verilen soğuk damgalı kimlik kartı, pasaport, evlenme cüzdanı, askerlik belgesi, sürücü belgesi, hâkim ve savcılar ile yüksek yargı organı mensuplarına verilen mesleki kimlik kartı, avukat, noter ve askerî kimlik kartı gibi kimliğini tereddütsüz ortaya koyan resimli, resmî nitelikteki belgelerden birini başkana verir ve seçmen sıra numarasını söyler. Bu belgelerden birini vermeyen seçmen oy kullanamaz. Belediyeler ile köy veya mahalle muhtarlarınca düzenlenip onaylanan kimlik belgeleri seçmenin kimliğinin tespitinde geçerli değildir. Üzerinde Türkiye Cumhuriyeti kimlik numarası olmayan resimli ve resmî bir kimlik belgesi ibraz eden seçmenin oy kullanabilmesi için, bu belgelerin yanında ayrıca seçmen bilgi kâğıdını veya nüfus müdürlüklerince verilmiş nüfus kayıt örneğini ibraz etmesi şarttır. <b>(298/87, 135/27)</b>",
+    "tags": "",
+    "page": 11
+  },
+  {
+    "id": 109,
+    "tag": "yeni-pusula",
+    "question": "Oy pusulasını alan seçmen, yeni pusula alabilir mi?",
+    "answer": "Seçmen birleşik oy pusulaları verildikten sonra hata veya başka bir neden ileri sürülerek yeni bir birleşik oy pusulası alamaz. <b>(135/28)</b>",
+    "tags": "",
+    "page": 12
+  },
+  {
+    "id": 110,
+    "tag": "oy-yardimi",
+    "question": "Oy verecek seçmene birisi yardım edebilir mi?",
+    "answer": "<b>(135/30)</b> Sandık kurulu başkan veya üyeleri, engelli seçmenlere yardım etmek amacıyla oy verme kabinine giremez, oy kullanma sırasında yardım edemez. Sandık kurulu başkanı tarafından görme engelli seçmenlere Yüksek Seçim Kurulunca oy pusulalarına uygun olarak hazırlanan şablon ile oylarını kullanabilecekleri hatırlatılır, talep etmeleri halinde oy pusulası sandık kurulu başkanı, akrabalarından biri, akrabası yoksa diğer herhangi bir seçmenin yardımıyla şablona yerleştirilmek suretiyle oylarını kullanabilirler (298/14-3, 93/2). Görme engelliler, felçliler, elleri eksik olanlar veya bu gibi bedeni engelleri açıkça belli olanlar o seçim çevresi seçmeni olan ve o sırada sandık çevresinde bulunan akrabalarından birinin, akrabası yoksa diğer herhangi bir seçmenin yardımı ile oylarını kullanabilirler. Bir seçmen birden fazla engelliye yardım edemez (298/93-2).",
+    "tags": "",
+    "page": 13
+  },
+  {
+    "id": 111,
+    "tag": "oy-kabini",
+    "question": "Oy verme alanına birden fazla kişi girebilir mi?",
+    "answer": "Seçmen, kapalı oy verme yerinden dışarı çıkmadıkça, hiç kimse oraya giremez. Ancak oy pusulalarını hazırlamak için, kapalı oy verme yerinde, normal süreden fazla kalan seçmen, kurul başkanı tarafından makul bir süre verilerek uyarılır. Bu uyarıya rağmen kapalı oy verme yerinden çıkmayan seçmen, oradan çıkarılır. <b>(298/92, 135/29)</b>",
+    "tags": "",
+    "page": 13
+  },
+  {
+    "id": 112,
+    "tag": "okuma-yazma",
+    "question": "Okuma yazma bilmeyen kişi nasıl oy kullanır?",
+    "answer": "Okuma - yazma bilmeyen seçmenlere, oylarını kullanmaları konusunda başkaları tarafından sandık çevresinde yardım edilemez. Okuma - yazma bilmeyen seçmen, sorduğu ve istediği takdirde sandık kurulu başkanı, sadece birleşik oy pusulaları üzerinde bulunan cumhurbaşkanı adayı, siyasi parti ve ittifakların işaretlerinden hangisinin hangi aday veya partiye ait olduğunu ve tercih ettiği cumhurbaşkanı adayı, siyasi parti ve ittifakların  bölüme taşırmamak suretiyle 'TERCİH' veya 'EVET' mührünü basması ve birleşik oy pusulalarını katlayıp sarı renkli zarfa koyarak ağzını yapıştırması gerektiğini anlatır. Okuma - yazma bilmeyen seçmenlere oy verme sırasında yardım etmek amacıyla oy verme yerine kendisinden başka kimse giremez ve oy kullanma sırasında yardım edemez. <b>(298/92, 135/31)</b>",
+    "tags": "",
+    "page": 13
+  },
+  {
+    "id": 114,
+    "tag": "gecersiz-zarf",
+    "question": "Bir zarf nasıl geçersiz olur?",
+    "answer": "<ul><li>Sandık kurulunca verilen biçim ve renkte olmayan</li><li>'Türkiye Cumhuriyeti Yüksek Seçim Kurulu' filigranı olmayan kâğıttan imal edilmiş olan</li><li>Yüksek Seçim Kurulu amblemi olmayan</li><li>Üzerinde İlçe Seçim Kurulu mührü bulunmayan</li><li>Üzerinde sandık kurulu mührü bulunmayan</li><li>Tamamı yırtılmış olan</li><li>Üzerinde İlçe Seçim Kurulu ve sandık kurulu mührü dışında herhangi bir mühür, imza, yazı, parmak izi veya herhangi bir işaret bulunan</li></ul>zarflar geçersiz sayılır. <b>(298/78-2, 298/98, 135/39)</b>",
+    "tags": "",
+    "page": 15
+  },
+  {
+    "id": 115,
+    "tag": "hesaba-katilmayan",
+    "question": "Hesaba katılmayan oy nedir?",
+    "answer": "Zarfın içinden el ilanı, broşür ya da özel bir işaret, yazı veya şekil taşıyan kağıt veya işaret amacı taşıyan herhangi bir madde çıkmış olması halinde, bu zarftan çıkan oy pusulalarının hiçbiri hesaba katılmaz.<br/><br/>Bir zarfta tek oy pusulası kullanılan seçimlerde, zarfın içerisinden o seçim türüne ait oy pusulasının dışında, aynı veya başka bir seçim türüne ait oy pusulası çıkmış olması halinde, bu zarftan çıkan oy pusulalarının hiçbiri hesaba katılmaz.<br/><br/>Bir zarfta birden fazla oy pusulası kullanılan seçimlerde, zarfın içerisinden aynı seçim türüne ait birden fazla oy pusulası çıkmış olması halinde, sadece bu seçim türüne ait oy pusulaları hesaba katılmaz, diğerleri hesaba katılır.<br/><br/>Bir zarfta birden fazla oy pusulası kullanılan seçimlerde, o zarfta kullanılması gereken oy pusulalarının dışında başka bir seçim türüne ait oy pusulası çıkmış olması halinde, bu zarftan çıkan oy pusulalarının hiçbiri hesaba katılmaz.<br/><br/>Bir zarfta birden fazla oy pusulası kullanılan seçimlerde, o zarfta kullanılması gereken oy pusulalarından biri veya birkaçı eksik çıksa bile, zarftan çıkan diğer oy pusulaları hesaba katılır. <b>(298/102, 135/42)</b>",
+    "tags": "",
+    "page": 21
+  },
+  {
+    "id": 116,
+    "tag": "gecersiz-pusula",
+    "question": "Bir pusula nasıl geçersiz olur?",
+    "answer": "<ul><li>Sandık kurulunca verilen biçim ve renkte olmayan</li><li>Türkiye Cumhuriyeti Yüksek Seçim Kurulu filigranı bulunmayan</li><li>Arkasında sandık kurulu mührü bulunmayan</li><li>Hiçbir yerine “TERCİH” veya “EVET” mührü basılmamış olan</li><li>Birden fazla cumhurbaşkanı adayına, aynı ittifak içinde yer almayan birden fazla siyasi partiye, birden fazla ittifaka veya birden fazla bağımsız adaya ayrılan alanlara “TERCİH” veya “EVET” mührü basılmış olan</li> <li>Birden fazla cumhurbaşkanı adayına, aynı ittifak içinde yer almayan birden fazla siyasi partiye, birden fazla ittifaka veya birden fazla bağımsız adaya ayrılan alana taşmış “TERCİH” veya “EVET” mührü bulunan</li><li>Sandığın ait olduğu seçim çevresinden başka bir seçim çevresi için düzenlenmiş olan</li><li>Bütünlüğü bozulacak şekilde yırtılmış veya koparılmış olan</li> <li>Üzerine “TERCİH” veya “EVET” mührü dışında veya “TERCİH” veya “EVET” mührü yerine herhangi bir özel işaret, herhangi bir isim, imza kaşesi, mühür veya parmak izi basılmış olan</li> <li>Üzerinde yer alan cumhurbaşkanı adaylarına, siyasi partilere, ittifaklara veya bağımsız adaylara ait bölümleri belirgin bir şekilde ve özel olarak karalanmış, çizilmiş veya işaretlenmiş olan</li><li>Üzerinde yer alan matbu yazıların ve şekillerin dışında yazılar veya harfler veya sayılar yazılmış veya şekiller çizilmiş olan</li></ul>birleşik oy pusulaları geçerli değildir.<br/><br/>Aşağıdaki haller oy pusulalarını geçersiz kılmaz;<ul><li>Zarfların açılması veya oyların okunması sırasında yırtılması</li><li>Bütünlüğü bozulmaksızın bir kısmının kazaen yırtılması</li><li>Herhangi bir şekilde lekelenmiş olup da bunun özel olarak işaret koymak amacıyla yapıldığının anlaşılamaması</li> <li>Birleşik oy pusulasının katlanarak zarfa konulması sebebiyle “TERCİH” veya “EVET” mührü ile oy pusulasının arkasına basılan sandık kurulu mühür izinin oy pusulasının diğer kısımlarına geçmesi</li><li>Bir cumhurbaşkanı adayı, siyasi parti, ittifak alanı veya bağımsız aday alanına basılan “TERCİH” veya “EVET” mührünün alanları ayıran çizgili bölgeye taşmış olması</li><li>Başka bir cumhurbaşkanı adayı, siyasi parti, ittifak alanı veya bağımsız adayın alanına taşmamak kaydıyla, cumhurbaşkanı adayı, siyasi parti, ittifak alanı veya bağımsız aday alanına birden çok “TERCİH” veya “EVET” mührü basılması</li><li>Yetkili seçim kurulları tarafından gönderilen ve Türkiye Cumhuriyeti Yüksek Seçim Kurulu filigranı bulunan oy pusulalarının arkasının sandık kurullarının ihmaliyle mühürlenmemiş olması. <b>(135/41)</b></li></ul>",
+    "tags": "",
+    "page": 20
+  },
+  {
+    "id": 117,
+    "tag": "islak-imzali-tutanak",
+    "question": "Sandık kurulu müşahite ıslak imzalı tutanak vermek zorunda mı?",
+    "answer": "Sandık sonuç tutanağının birer sureti, yeteri kadar hazırlanarak sandık kurulu başkanı ve üyelerince imzalandıktan ve mühürlendikten sonra seçime katılma yeterliliği olan ve talep eden cumhurbaşkanı adaylarının, siyasi parti ve bağımsız adayların müşahitlerine verilir. Bu tutanaklar talep halinde öncelikle sandık kurulunun siyasi partili üyelerine imza karşılığında verilir. Ancak bu halde, o partinin müşahidine ayrıca tutanak verilmez. Müşahitlere verilecek sandık sonuç tutanakları, çok yapraklı kopyalı suret biçiminde hazırlanır. Sandık sonuç tutanağı verilen müşahit ve sandık kurulu üyelerinin ad ve soyadları ile temsilcisi oldukları cumhurbaşkanı adayının adı ve soyadı, siyasi partinin adı veya bağımsız adayın adı ve soyadı sandık kurulu tutanak defterine yazıldıktan sonra tutanağın teslim alındığına dair imzaları alınır. Sandık kuruluna, oy pusulasındaki cumhurbaşkanı siyasi parti veya bağımsız aday sayısından beş fazla sayıda sandık sonuç tutanağı verilir. <b>(298/105, 135/43)</b>",
+    "tags": "",
+    "page": 23
+  }
+]

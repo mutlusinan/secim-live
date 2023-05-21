@@ -8,19 +8,44 @@ pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/$
 interface PDFViewerProps {
   link: string;
   close: Function;
+  pageNumber?: number;
 }
 export default function PDFViewer(props: PDFViewerProps) {
   const { width } = useViewportSize();
   const [isBelge, setIsBelge] = useState(true);
+  const [page, setPage] = useState(props.pageNumber ?? 1);
   return (
     <>
-      <div style={{ textAlign: "center" }}>
+      <div
+        style={{
+          textAlign: "center",
+          position: "sticky",
+          top: "12px",
+          zIndex: "1000",
+        }}
+      >
         <Button
           variant={"outline"}
-          style={{ marginBottom: "10px" }}
+          style={{ marginBottom: "10px"}}
           onClick={() => props.close()}
         >
           Geri Dön
+        </Button>
+        <br />
+        <Button
+          variant={"filled"}
+          style={{ marginBottom: "10px", marginRight: "10px" }}
+          onClick={() => setPage(page - 1)}
+          disabled={page === 1}
+        >
+          Önceki Sayfa
+        </Button>
+        <Button
+          variant={"filled"}
+          style={{ marginBottom: "10px" }}
+          onClick={() => setPage(page + 1)}
+        >
+          Sonraki Sayfa
         </Button>
       </div>
       <div style={{ textAlign: "center" }}>
@@ -56,7 +81,7 @@ export default function PDFViewer(props: PDFViewerProps) {
 
       <Document className="pdf-container" file={props.link}>
         <Page
-          pageNumber={1}
+          pageNumber={page}
           renderMode={isBelge ? "canvas" : "none"}
           renderTextLayer={!isBelge}
           renderAnnotationLayer={false}
