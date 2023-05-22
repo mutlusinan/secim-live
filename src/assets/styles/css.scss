@@ -2,6 +2,11 @@
     transition: .4s;
 }
 
+:root {
+    --bs-link-color: #ef3044 !important;
+    --bs-link-hover-color: #F1485A !important;
+}
+
 .header-logo {
     display: none;
 }
@@ -180,6 +185,25 @@ img.party-img {
 
 .pdf-viewer-mobile-show {
     display: none;
+}
+
+.arama-input input {
+    font-size: 16px;
+}
+
+.accordion-panel .mantine-Accordion-content {
+    text-align: start;
+    border-radius: 16px;
+    background: #9191911f;
+    margin: 15px;
+}
+
+.mantine-Accordion-chevron>svg {
+    color: #EF3044;
+}
+
+.dilekceler-tabs .mantine-Badge-root {
+    margin-left: 6px;
 }
 
 @media (max-width: 550px) {
