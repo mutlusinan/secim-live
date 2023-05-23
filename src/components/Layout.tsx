@@ -1,5 +1,6 @@
 import { Container } from "@mantine/core";
 import { LayoutHeader } from "./Header";
+import { LayoutFooter } from "./Footer";
 import MenuItems from "../assets/data/MenuItems.json";
 
 interface LayoutProps {
@@ -11,6 +12,7 @@ export default function Layout({ children }: LayoutProps) {
     <Container>
       <LayoutHeader links={MenuItems} />
       <main>{children}</main>
+      <LayoutFooter />
     </Container>
   );
 }
