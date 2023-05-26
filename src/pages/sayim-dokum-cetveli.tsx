@@ -16,6 +16,7 @@ import {
   Title,
   Table,
   Center,
+  Progress,
 } from "@mantine/core";
 import Image from "next/image";
 import { useLocalStorage, useDisclosure } from "@mantine/hooks";
@@ -38,6 +39,7 @@ import soLogo from "../assets/img/cb/ogan.png";
 import rteLogo from "../assets/img/cb/erdogan.png";
 import miLogo from "../assets/img/cb/ince.png";
 import headerLogo from "../assets/img/header-logo.png";
+import Link from "next/link";
 
 export default function SayimDokumCetveli() {
   type VoteType = { a: string; t: string };
@@ -150,6 +152,7 @@ export default function SayimDokumCetveli() {
     setTotal(0);
     setVoteProgress([]);
     setPartiler(defaultParties);
+    setVoteLimit(5);
     setTitleData({
       il: "",
       ilce: "",
@@ -231,7 +234,7 @@ export default function SayimDokumCetveli() {
               id="multi-select-party"
             />
           </div>
-          <div className="col-12 mt-5 d-flex justify-content-center">
+          <Center className="mt-5">
             <Button
               variant="outline"
               onClick={() => {
@@ -241,7 +244,7 @@ export default function SayimDokumCetveli() {
             >
               Yeni Parti Ekle +
             </Button>
-          </div>
+          </Center>
         </div>
       </Drawer>
       <div className="container">
@@ -281,8 +284,8 @@ export default function SayimDokumCetveli() {
           {Partiler.filter((parti) => parti.type === "a" && parti.runoff).map(
             (aday) => {
               return (
-                <div key={aday.id} className="col-12 px-0 vote-box">
-                  <span style={{ minWidth: "36px" }}>
+                <div key={aday.id} className="col-6 px-0 vote-box">
+                  <span>
                     <img
                       alt={aday.isim}
                       title={aday.isim}
@@ -290,7 +293,7 @@ export default function SayimDokumCetveli() {
                       className="party-img"
                     />
                   </span>
-                  <span className="vote-name">{aday.isim}</span>
+                  {/* <span className="vote-name">{aday.isim}</span> */}
                   <Group className="numerator" spacing={5}>
                     <NumberInput
                       hideControls
@@ -310,7 +313,7 @@ export default function SayimDokumCetveli() {
                       readOnly
                     />
                     <ActionIcon
-                      size={36}
+                      size={40}
                       variant="filled"
                       onClick={() => changeVoteNum("inc", aday.id)}
                     >
@@ -427,8 +430,27 @@ export default function SayimDokumCetveli() {
             </div>
           </div>
         )}
-        {voteProgress && (
+        {voteProgress.length > 0 && (
           <>
+            <Progress
+              size={16}
+              sections={[
+                {
+                  // @ts-ignore
+                  value: ((sonuclar.rte ?? 0) / total) * 100,
+                  // @ts-ignore
+                  label: "%" + (((sonuclar.rte ?? 0) / total) * 100).toFixed(1),
+                  color: "#ffb27f",
+                },
+                {
+                  // @ts-ignore
+                  value: ((sonuclar.kk ?? 0) / total) * 100,
+                  // @ts-ignore
+                  label: "%" + (((sonuclar.kk ?? 0) / total) * 100).toFixed(1),
+                  color: "#ff8383",
+                },
+              ]}
+            />
             <Table className="vote-table">
               <thead>
                 <tr>
@@ -551,11 +573,11 @@ export default function SayimDokumCetveli() {
               }}
             />
           </div>
-          <div className="col-12 mt-3 d-flex justify-content-center">
+          <Center className="mt-2">
             <Button variant="light" onClick={saveSandik}>
               Sandığı Cihazına Kaydet
             </Button>
-          </div>
+          </Center>
         </div>
         {sandikData.length > 0 && (
           <div className="row">
@@ -603,13 +625,20 @@ export default function SayimDokumCetveli() {
                 );
               })}
             </Grid>
-            <div className="col-12 my-3 d-flex justify-content-center">
+            <Center className="my-2">
               <Button variant="light" onClick={deleteSandikData}>
                 Cihazındaki Kayıtları Sıfırla
               </Button>
-            </div>
+            </Center>
           </div>
         )}
+        <Center className="mt-2">
+          <Button variant="light">
+            <Link href="/cb-secim-cetele.pdf" target="_blank" download>
+              Boş Çetele Örneği
+            </Link>
+          </Button>
+        </Center>
       </div>
     </>
   );
