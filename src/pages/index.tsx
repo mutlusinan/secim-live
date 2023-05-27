@@ -1,7 +1,7 @@
 import MenuItems from "../assets/data/MenuItems.json";
-import ovo from "../assets/img/ovo.png";
-import tg from "../assets/img/tg.png";
-import io from "../assets/img/secim_gonullu_io.png";
+// import ovo from "../assets/img/ovo.png";
+// import tg from "../assets/img/tg.png";
+// import io from "../assets/img/secim_gonullu_io.png";
 import { Button } from "@mantine/core";
 import Link from "next/link";
 
@@ -37,7 +37,7 @@ export default function Home() {
           );
         })}
       </div>
-      <div className="row d-flex justify-content-center gonullu my-4">
+      {/* {<div className="row d-flex justify-content-center gonullu my-4">
         <div className="col-12">
           <p style={{ fontSize: "30px" }}>
             Müşahit olmak için geç kalmış değilsin!
@@ -67,7 +67,7 @@ export default function Home() {
             />
           </a>
         </div>
-      </div>
+      </div>} */}
     </div>
   );
 }
