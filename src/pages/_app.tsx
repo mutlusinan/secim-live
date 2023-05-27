@@ -11,6 +11,7 @@ import {
 } from "@mantine/core";
 import { useLocalStorage } from "@mantine/hooks";
 import { useRouter } from "next/router";
+import Script from "next/script";
 
 export default function App(props: AppProps) {
   const router = useRouter();
@@ -73,6 +74,18 @@ export default function App(props: AppProps) {
           </Layout>
         </MantineProvider>
       </ColorSchemeProvider>
+      <Script
+        src="https://www.googletagmanager.com/gtag/js?id=G-CK70ZT38GK"
+        strategy="afterInteractive"
+      />
+      <Script id="google-analytics" strategy="afterInteractive">
+        {`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){window.dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-CK70ZT38GK');
+        `}
+      </Script>
     </>
   );
 }
