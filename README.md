@@ -9,7 +9,17 @@
 Masaüstü ve telefonda kullanıma uygun şekilde tasarlanmıştır.
 
 <p align="center">
-  <a href=https://secim.live><img src="https://github.com/mutlusinan/secim-live/assets/19624037/067aac84-4459-412b-834f-76bf1c43f54f"  title= Önizleme  height=350px></a>
+  <a href=https://secim.live><img src="https://github.com/mutlusinan/secim-live/assets/19624037/31fd73fa-95b0-4519-8804-95581227d182"  title= Önizleme  height=350px></a>
+  </p>
+  
+  <p align="center">
+  <a href=https://secim.live><img src="https://github.com/mutlusinan/secim-live/assets/19624037/ae23bb30-ccf6-4858-922c-ba58f04fbbff"  title= Önizleme  height=350px></a>
+  </p>
+  <p align="center">
+  <a href=https://secim.live><img src="https://github.com/mutlusinan/secim-live/assets/19624037/aff1398a-676a-4011-83f4-6ce4f3ef2a79"  title= Önizleme  height=350px></a>
+  </p>
+  <p align="center">
+  <a href=https://secim.live><img src="https://github.com/mutlusinan/secim-live/assets/19624037/511d0872-e91e-47e1-9868-99ba687ad5b9"  title= Önizleme  height=350px></a>
   </p>
 
 <p align="center">
