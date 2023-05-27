@@ -93,18 +93,22 @@ export default function Dilekceler() {
               <Accordion.Control>{soru.question}</Accordion.Control>
               <Accordion.Panel className="accordion-panel">
                 <div dangerouslySetInnerHTML={{ __html: soru.answer }}></div>
-                <br />
-                <Button
-                  style={{ width: "100%" }}
-                  variant="outline"
-                  onClick={() => {
-                    setFile("/dilekce/135.pdf");
-                    setPage(soru.page ?? 1);
-                    open();
-                  }}
-                >
-                  İlgili yeri göster
-                </Button>
+                {soru.page && (
+                  <>
+                    <br />
+                    <Button
+                      style={{ width: "100%" }}
+                      variant="outline"
+                      onClick={() => {
+                        setFile("/dilekce/135.pdf");
+                        setPage(soru.page ?? 1);
+                        open();
+                      }}
+                    >
+                      İlgili yeri göster
+                    </Button>
+                  </>
+                )}
               </Accordion.Panel>
             </Accordion.Item>
           ))}

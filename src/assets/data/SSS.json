@@ -32,6 +32,13 @@
     "page": 7
   },
   {
+    "id": 103,
+    "tag": "secmen-sandik-bilgisi",
+    "question": "Kişi hangi sandıkta oy kullanacağını bilmiyor/sandıktaki sırasını bilmiyor.",
+    "answer": "Seçmen bilgilerini öğrenmek için <a href='https://secmen.ysk.gov.tr/secmen-yurtici' target='_blank'>lütfen tıklayın.</a>",
+    "tags": "sandık kurulu üyesi, sandık kurulu üyeleri, eksik, yedek, müşahit"
+  },
+  {
     "id": 104,
     "tag": "telefon",
     "question": "Oy veren kişiler kabine telefonla girebilir mi?",
