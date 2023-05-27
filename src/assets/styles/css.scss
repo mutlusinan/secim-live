@@ -83,15 +83,21 @@ button {
     text-align: center;
 }
 
-.vote-box {
+.container .vote-box {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
-    justify-content: flex-start;
     margin-bottom: 5px;
+    padding-left: 10px !important;
+
+    &:first-of-type {
+        flex-direction: row-reverse;
+        padding-right: 10px !important;
+        padding-left: 0px !important;
+    }
 
     .vote-name {
-        font-size: 14px;
+        font-size: 16px;
         text-overflow: ellipsis;
         white-space: nowrap;
         overflow: hidden;
@@ -105,9 +111,17 @@ button {
 
     }
 
-    .numerator * {
-        display: inline-flex;
-        margin-left: auto;
+    .numerator {
+        flex-direction: column;
+
+        .mantine-UnstyledButton-root {
+            width: 3.125rem;
+        }
+
+        * {
+            display: inline-flex;
+            margin-left: auto;
+        }
     }
 }
 
@@ -134,12 +148,12 @@ button {
 }
 
 img.party-img {
-    height: 36px;
-    border-radius: 0.25rem;
+    height: 80px;
+    border-radius: 0.5rem;
 }
 
 .gonullu img {
-    width: 90%;
+    width: 100%;
     border: 1px solid crimson;
     padding: 20px 50px;
     margin-bottom: 20px;
@@ -152,7 +166,7 @@ img.party-img {
 }
 
 .bolder {
-    font-weight: 600;
+    font-weight: 700;
 }
 
 .checklist-definition {
@@ -204,6 +218,63 @@ img.party-img {
 
 .dilekceler-tabs .mantine-Badge-root {
     margin-left: 6px;
+}
+
+.vote-table {
+    * {
+        transition: 0s;
+    }
+
+    tr th,
+    tr td {
+        text-align: center !important;
+    }
+
+    .kk-row {
+        background-color: #ff8383
+    }
+
+    .rte-row {
+        background-color: #ffb27f
+    }
+
+    #shine {
+        &.kk-row {
+            animation: kk-shine;
+            animation-duration: 2s;
+        }
+
+        &.rte-row {
+            animation: rte-shine;
+            animation-duration: 2s;
+        }
+    }
+}
+
+.mantine-Progress-root {
+    * {
+        transition: 0s;
+    }
+}
+
+@keyframes kk-shine {
+    from {
+        background-color: #ff3232;
+    }
+
+    to {
+        background-color: #ff8383;
+    }
+}
+
+@keyframes rte-shine {
+    from {
+        background-color: #ff641d;
+    }
+
+    to {
+        background-color: #ffb27f;
+    }
 }
 
 @media (max-width: 550px) {

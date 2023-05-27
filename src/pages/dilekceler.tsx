@@ -7,9 +7,10 @@ import {
   Accordion,
   Tabs,
   Badge,
+  CloseButton,
 } from "@mantine/core";
-import { useDisclosure, useScrollIntoView } from "@mantine/hooks";
-import { useState } from "react";
+import { useDisclosure } from "@mantine/hooks";
+import { useState, useEffect } from "react";
 import DilekceList from "../assets/data/Dilekceler.json";
 import SSS from "../assets/data/SSS.json";
 import Link from "next/link";
@@ -19,11 +20,12 @@ export default function Dilekceler() {
   const [file, setFile] = useState("");
   const [page, setPage] = useState(1);
   const [search, setSearch] = useState("");
+  const [inputValue, setInputValue] = useState("");
   const [opened, { open, close }] = useDisclosure(false);
 
-  const { scrollIntoView, targetRef } = useScrollIntoView<HTMLTableRowElement>({
-    duration: 0,
-  });
+  useEffect(() => {
+    setSearch(inputValue.toLocaleLowerCase("tr"));
+  }, [inputValue]);
 
   const filteredDilekce = DilekceList.filter((dilekce) =>
     (dilekce.text + " " + dilekce.tags).toLocaleLowerCase("tr").includes(search)
@@ -57,8 +59,18 @@ export default function Dilekceler() {
         style={{ marginBottom: "20px" }}
         placeholder="Ör: Müşahit"
         label="Arama"
-        onChange={(e: any) => setSearch(e.target.value.toLocaleLowerCase("tr"))}
+        onChange={(e: any) => setInputValue(e.target.value)}
         className="arama-input"
+        value={inputValue}
+        rightSection={
+          inputValue && (
+            <CloseButton
+              aria-label="Close modal"
+              onClick={() => setInputValue("")}
+            />
+          )
+        }
+        type="search"
       />
       <div className="row mb-4 dilekceler-tabs">
         <Tabs defaultValue={tab}>
@@ -80,9 +92,7 @@ export default function Dilekceler() {
             <Accordion.Item key={soru.tag} value={soru.tag}>
               <Accordion.Control>{soru.question}</Accordion.Control>
               <Accordion.Panel className="accordion-panel">
-                <div
-                  dangerouslySetInnerHTML={{ __html: soru.answer }}
-                ></div>
+                <div dangerouslySetInnerHTML={{ __html: soru.answer }}></div>
                 <br />
                 <Button
                   style={{ width: "100%" }}
@@ -102,11 +112,7 @@ export default function Dilekceler() {
       )}
       {tab === "dilekce" &&
         filteredDilekce.map((dilekce, i) => (
-          <div
-            key={dilekce.id}
-            className="col-12 mt-2 mb-1 dilekce-button"
-            ref={i === 0 ? targetRef : null}
-          >
+          <div key={dilekce.id} className="col-12 mt-2 mb-1 dilekce-button">
             <Button
               style={{ width: "100%" }}
               variant="outline"

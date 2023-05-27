@@ -71,12 +71,7 @@ export default function PDFViewer(props: PDFViewerProps) {
         >
           Metin
         </Button>
-        <Button
-          variant="light"
-          onClick={() => {
-            setIsBelge(false);
-          }}
-        >
+        <Button variant="light">
           <Link href={props.link} target="_blank" download>
             İndir
           </Link>

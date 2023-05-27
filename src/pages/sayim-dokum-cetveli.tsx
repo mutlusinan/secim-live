@@ -5,18 +5,18 @@ import {
   rem,
   TextInput,
   Button,
-  Tabs,
   MultiSelect,
   Select,
   SelectItem,
   Drawer,
   Card,
-  Text,
   Badge,
   Grid,
   Stack,
-  Space,
   Title,
+  Table,
+  Center,
+  Progress,
 } from "@mantine/core";
 import Image from "next/image";
 import { useLocalStorage, useDisclosure } from "@mantine/hooks";
@@ -39,8 +39,10 @@ import soLogo from "../assets/img/cb/ogan.png";
 import rteLogo from "../assets/img/cb/erdogan.png";
 import miLogo from "../assets/img/cb/ince.png";
 import headerLogo from "../assets/img/header-logo.png";
+import Link from "next/link";
 
 export default function SayimDokumCetveli() {
+  type VoteType = { a: string; t: string };
   const defaultParties = [
     "akp",
     "chp",
@@ -57,6 +59,8 @@ export default function SayimDokumCetveli() {
     key: "saved-sandik-data",
     defaultValue: [],
   });
+  const [voteProgress, setVoteProgress] = useState<VoteType[]>([]);
+  const [voteLimit, setVoteLimit] = useState(5);
   const [sonuclar, setSonuclar] = useState({});
   const [total, setTotal] = useState(0);
   const [isCumhur, setIsCumhur] = useState(true);
@@ -82,6 +86,12 @@ export default function SayimDokumCetveli() {
     setTotal(sum);
   };
 
+  useEffect(() => {
+    const elm = document?.getElementById("shine");
+    var newone = elm?.cloneNode(true);
+    elm?.parentNode?.replaceChild(elm, elm);
+  }, [voteProgress]);
+
   const changeVoteNum = (activity: string, voteId: string) => {
     if (activity === "inc") {
       // @ts-ignore
@@ -91,6 +101,12 @@ export default function SayimDokumCetveli() {
         // @ts-ignore
       } else sonuclar[voteId]++;
       const degisen = sonuclar;
+      const currentTime = new Date();
+      const hours = currentTime.toLocaleTimeString([], {
+        hour12: false,
+      });
+
+      setVoteProgress([...voteProgress, { a: voteId, t: hours }]);
       setSonuclar(degisen);
     } else if (activity === "dec") {
       // @ts-ignore
@@ -104,6 +120,14 @@ export default function SayimDokumCetveli() {
       }
     }
     totalSonuc();
+  };
+
+  const deleteVote = (e: any) => {
+    const index = voteProgress.length - e.target.dataset.index - 1;
+    const voteList = voteProgress;
+    changeVoteNum("dec", voteProgress[index].a);
+    voteList.splice(index, 1);
+    setVoteProgress([...voteList]);
   };
 
   const saveSandik = () => {
@@ -126,7 +150,9 @@ export default function SayimDokumCetveli() {
     setSandikData([...sandikData, newSonuc]);
     setSonuclar({});
     setTotal(0);
+    setVoteProgress([]);
     setPartiler(defaultParties);
+    setVoteLimit(5);
     setTitleData({
       il: "",
       ilce: "",
@@ -208,7 +234,7 @@ export default function SayimDokumCetveli() {
               id="multi-select-party"
             />
           </div>
-          <div className="col-12 mt-5 d-flex justify-content-center">
+          <Center className="mt-5">
             <Button
               variant="outline"
               onClick={() => {
@@ -218,7 +244,7 @@ export default function SayimDokumCetveli() {
             >
               Yeni Parti Ekle +
             </Button>
-          </div>
+          </Center>
         </div>
       </Drawer>
       <div className="container">
@@ -251,15 +277,15 @@ export default function SayimDokumCetveli() {
         </div> */}
         <div className="row mb-3 sandik-bilgisi">
           <div className="col-12 px-0">
-            <TextInput label="Toplam Oy" defaultValue={total} />
+            <TextInput label="Toplam Oy" value={total} readOnly />
           </div>
         </div>
         <div className="row">
           {Partiler.filter((parti) => parti.type === "a" && parti.runoff).map(
             (aday) => {
               return (
-                <div key={aday.id} className="col-12 px-0 vote-box">
-                  <span style={{ minWidth: "36px" }}>
+                <div key={aday.id} className="col-6 px-0 vote-box">
+                  <span>
                     <img
                       alt={aday.isim}
                       title={aday.isim}
@@ -267,15 +293,8 @@ export default function SayimDokumCetveli() {
                       className="party-img"
                     />
                   </span>
-                  <span className="vote-name">{aday.isim}</span>
+                  {/* <span className="vote-name">{aday.isim}</span> */}
                   <Group className="numerator" spacing={5}>
-                    <ActionIcon
-                      size={36}
-                      variant="filled"
-                      onClick={() => changeVoteNum("dec", aday.id)}
-                    >
-                      -
-                    </ActionIcon>
                     <NumberInput
                       hideControls
                       min={0}
@@ -291,9 +310,10 @@ export default function SayimDokumCetveli() {
                       //@ts-ignore
                       value={sonuclar[aday.id] || 0}
                       defaultValue={0}
+                      readOnly
                     />
                     <ActionIcon
-                      size={36}
+                      size={40}
                       variant="filled"
                       onClick={() => changeVoteNum("inc", aday.id)}
                     >
@@ -410,6 +430,91 @@ export default function SayimDokumCetveli() {
             </div>
           </div>
         )}
+        {voteProgress.length > 0 && (
+          <>
+            <Progress
+              size={16}
+              sections={[
+                {
+                  // @ts-ignore
+                  value: ((sonuclar.rte ?? 0) / total) * 100,
+                  // @ts-ignore
+                  label: "%" + (((sonuclar.rte ?? 0) / total) * 100).toFixed(1),
+                  color: "#ffb27f",
+                },
+                {
+                  // @ts-ignore
+                  value: ((sonuclar.kk ?? 0) / total) * 100,
+                  // @ts-ignore
+                  label: "%" + (((sonuclar.kk ?? 0) / total) * 100).toFixed(1),
+                  color: "#ff8383",
+                },
+              ]}
+            />
+            <Table className="vote-table">
+              <thead>
+                <tr>
+                  <th>Oy sayısı</th>
+                  <th>Aday</th>
+                  <th>Saat</th>
+                  <th>Oyu sil</th>
+                </tr>
+              </thead>
+              <tbody>
+                {voteProgress
+                  .slice(0)
+                  .reverse()
+                  .map((row, i) => {
+                    if (i < voteLimit)
+                      return (
+                        <tr
+                          key={row.a + i}
+                          className={
+                            (row.a === "kk" ? "kk-row" : "rte-row") +
+                            ((voteProgress.length - i) % 10 === 0
+                              ? " bolder"
+                              : "")
+                          }
+                          id={i === 0 ? "shine" : ""}
+                        >
+                          <td>{voteProgress.length - i}</td>
+                          <td>
+                            {row.a === "kk"
+                              ? "Kemal Kılıçdaroğlu"
+                              : "Recep Tayyip Erdoğan"}
+                          </td>
+                          <td>{row.t}</td>
+                          <td>
+                            <span
+                              data-index={i}
+                              onClick={deleteVote}
+                              style={{
+                                fontSize: "20px",
+                                borderRadius: "6px",
+                                backgroundColor: "#ffffffa8",
+                                padding: "2px",
+                              }}
+                            >
+                              🗑️
+                            </span>
+                          </td>
+                        </tr>
+                      );
+                  })}
+              </tbody>
+            </Table>
+            {voteProgress.length > voteLimit && (
+              <Center className="my-2">
+                <Button
+                  variant="light"
+                  onClick={() => setVoteLimit(voteLimit + 5)}
+                >
+                  Daha fazla göster
+                </Button>
+              </Center>
+            )}
+          </>
+        )}
         <div className="row mb-3 sandik-bilgisi">
           <div className="col-12 px-0">
             <Select
@@ -468,11 +573,11 @@ export default function SayimDokumCetveli() {
               }}
             />
           </div>
-          <div className="col-12 mt-3 d-flex justify-content-center">
+          <Center className="mt-2">
             <Button variant="light" onClick={saveSandik}>
               Sandığı Cihazına Kaydet
             </Button>
-          </div>
+          </Center>
         </div>
         {sandikData.length > 0 && (
           <div className="row">
@@ -520,13 +625,20 @@ export default function SayimDokumCetveli() {
                 );
               })}
             </Grid>
-            <div className="col-12 my-3 d-flex justify-content-center">
+            <Center className="my-2">
               <Button variant="light" onClick={deleteSandikData}>
                 Cihazındaki Kayıtları Sıfırla
               </Button>
-            </div>
+            </Center>
           </div>
         )}
+        <Center className="mt-2">
+          <Button variant="light">
+            <Link href="/cb-secim-cetele.pdf" target="_blank" download>
+              Boş Çetele Örneği
+            </Link>
+          </Button>
+        </Center>
       </div>
     </>
   );
