@@ -1,5 +1,13 @@
 [
   {
+    "id": 100,
+    "tag": "okula-giremedim",
+    "question": "Seçim sabahında beni okula almıyorlar / sandık kurulu müşahitleri sınıfa almıyor.",
+    "answer": "Sandık çevresinde, sandık kurulu baskan ve üyeleri, adaylar, milletvekilleri, o sandık bölgesinde kayıtlı seçmenler ve o sandıkta görevli müsahitler ile bina sorumluları ve çagrı veya ihbar üzerine gelen görevli kolluk güçlerinden baska kimse bulunamaz. Su kadar ki, siyasi partilerin seçim kurullarına bildirdikleri itiraza yetkili kisiler ile temsilciler, seçim kurullarınca önceden kendilerine verilen belge ile sandık çevresinde bulunabilirler. Medya mensuplarının sandık çevresinde, sandık başı işlemlerine engel olmamak sartıyla, haber amacıyla görüntü ve bilgi elde etmeleri serbesttir <b>(298/82-2, 135/19, 135/21)</b>. Müşahit olmayan kişiler oy sayımı sırasında sandığı izleme hakkına sahiptir.",
+    "tags": "başkan, sandık kurulu başkanı, sandık başkanı, mevcut, okul, polis, bahçe, sabah, müşahit, belge",
+    "page": 8
+  },
+  {
     "id": 101,
     "tag": "baskan-gelmedi",
     "question": "Seçim başlamadan önce sandık kurulu üyesi/başkanı gelmezse ne olur?",
@@ -52,7 +60,7 @@
     "tag": "secim-bitti",
     "question": "Saat 17:00'den sonra gelen kişi oy kullanabilir mi? Sırada olanlar oy kullanabilir mi?",
     "answer": "Oylarını vermek üzere bekleyen seçmenler varsa, sandık kurulu başkanı bunları saydıktan ve kimliklerini aldıktan sonra sıra ile oylarını kullanmalarına izin verir. Yüksek Seçim Kurulunun belirlediği bitiş saatinden sonra gelen seçmen oy kullanamaz. <b>(298/89, 96, 135/25)</b>",
-    "tags": "gecikme, geç kalan, geç gelen, sıra, bitiş saati, kapanış",
+    "tags": "gecikme, geç kalan, geç gelen, sıra, bitiş saati, kapanış, 5, beş, akşam",
     "page": 11
   },
   {
@@ -76,8 +84,24 @@
     "tag": "oy-yardimi",
     "question": "Oy verecek seçmene birisi yardım edebilir mi?",
     "answer": "<b>(135/30)</b> Sandık kurulu başkan veya üyeleri, engelli seçmenlere yardım etmek amacıyla oy verme kabinine giremez, oy kullanma sırasında yardım edemez. Sandık kurulu başkanı tarafından görme engelli seçmenlere Yüksek Seçim Kurulunca oy pusulalarına uygun olarak hazırlanan şablon ile oylarını kullanabilecekleri hatırlatılır, talep etmeleri halinde oy pusulası sandık kurulu başkanı, akrabalarından biri, akrabası yoksa diğer herhangi bir seçmenin yardımıyla şablona yerleştirilmek suretiyle oylarını kullanabilirler (298/14-3, 93/2). Görme engelliler, felçliler, elleri eksik olanlar veya bu gibi bedeni engelleri açıkça belli olanlar o seçim çevresi seçmeni olan ve o sırada sandık çevresinde bulunan akrabalarından birinin, akrabası yoksa diğer herhangi bir seçmenin yardımı ile oylarını kullanabilirler. Bir seçmen birden fazla engelliye yardım edemez (298/93-2).",
-    "tags": "engelli, yardım, akraba, kabin, görme, kör, felçli",
+    "tags": "engelli, yardım, akraba, kabin, görme, kör, felçli, zihinsel, bedensel",
     "page": 13
+  },
+  {
+    "id": 120,
+    "tag": "zihinsel-engel",
+    "question": "Zihinsel engelli / down sendromlu kişiler oy kullanabilir mi? Başka kişiler ona yardımcı olabilir mi?",
+    "answer": "Seçmen listesinde olan herkes o sandıkta oy kullanabilir. Fiziksel engeller dışında seçmene yardım etmek amacıyla kişiler oy verme kabinine giremezler <b>(Bkz:(135/30))</b>. Seçmen oyunu tek başına kullanabiliyorsa eğer buna engel olacak bir davranış içinde bulunulmaz. ",
+    "tags": "engelli, yardım, akraba, kabin, görme, kör, felçli, zihinsel, bedensel",
+    "page": 13
+  },
+  {
+    "id": 121,
+    "tag": "oy-vermeye-engel",
+    "question": "Seçmen listesinde kayıtlı olan seçmenin oy vermesini engelliyorlar.",
+    "answer": "Kanuna aykırı biçimde seçmenin oy vermesine engel olan kimse, bir yıldan üç yıla kadar hapis cezası ile cezalandırılır. <b>(298/153)</b>",
+    "tags": "engelli, oy verme, seçmen listesi, ceza, hapis, kanun",
+    "page": 8
   },
   {
     "id": 111,
@@ -92,7 +116,7 @@
     "tag": "okuma-yazma",
     "question": "Okuma yazma bilmeyen kişi nasıl oy kullanır?",
     "answer": "Okuma - yazma bilmeyen seçmenlere, oylarını kullanmaları konusunda başkaları tarafından sandık çevresinde yardım edilemez. Okuma - yazma bilmeyen seçmen, sorduğu ve istediği takdirde sandık kurulu başkanı, sadece birleşik oy pusulaları üzerinde bulunan cumhurbaşkanı adayı, siyasi parti ve ittifakların işaretlerinden hangisinin hangi aday veya partiye ait olduğunu ve tercih ettiği cumhurbaşkanı adayı, siyasi parti ve ittifakların  bölüme taşırmamak suretiyle 'TERCİH' veya 'EVET' mührünü basması ve birleşik oy pusulalarını katlayıp sarı renkli zarfa koyarak ağzını yapıştırması gerektiğini anlatır. Okuma - yazma bilmeyen seçmenlere oy verme sırasında yardım etmek amacıyla oy verme yerine kendisinden başka kimse giremez ve oy kullanma sırasında yardım edemez. <b>(298/92, 135/31)</b>",
-    "tags": "okuma yazma, yardım, kabin",
+    "tags": "okuma yazma, yardım, kabin, yaşlı, göz, resim, pusula",
     "page": 13
   },
   {
@@ -102,6 +126,14 @@
     "answer": "<ul><li>Sandık kurulunca verilen biçim ve renkte olmayan</li><li>'Türkiye Cumhuriyeti Yüksek Seçim Kurulu' filigranı olmayan kâğıttan imal edilmiş olan</li><li>Yüksek Seçim Kurulu amblemi olmayan</li><li>Üzerinde İlçe Seçim Kurulu mührü bulunmayan</li><li>Üzerinde sandık kurulu mührü bulunmayan</li><li>Tamamı yırtılmış olan</li><li>Üzerinde İlçe Seçim Kurulu ve sandık kurulu mührü dışında herhangi bir mühür, imza, yazı, parmak izi veya herhangi bir işaret bulunan</li></ul>zarflar geçersiz sayılır. <b>(298/78-2, 298/98, 135/39)</b>",
     "tags": "geçersiz, zarf, filigran, amble, mühür, yırtık, imza, parmak izi",
     "page": 15
+  },
+  {
+    "id": 118,
+    "tag": "zarf-sayisi",
+    "question": "İmza atanların sayısı, sandıktan çıkan zarf sayısından farklı. Ne yapmalıyız?",
+    "answer": "...Sandıktan çıkan geçerli ve geçersiz zarfların toplam sayısı ile oy kullanan seçmen sayısı karşılaştırılır. Zarf sayısı, oy kullanan seçmen sayısına eşit veya eksik ise başkaca bir işlem yapılmaz. Zarf sayısı, oy kullanan seçmen sayısından fazla ise eşitligi sağlamak için önce geçersiz zarf sayısı düşülür. Geçersiz zarf sayısının düşülmesi halinde de eşitlik sağlanamıyorsa, sandık kurulu başkanı geçerli zarflar arasından, eşitliği sağlayacak sayıda zarfı gelişigüzel çeker ve bu zarflar açılmadan derhal yakılarak imha edilir. Imha edilen zarf sayısı, sandık sonuç tutanağına M/2-Milletvekili, C/2-Cumhurbaskanı (Örnek: 86-Milletvekili, Örnek: 404-Cumhurbaskanı) [referandumda CH/2 (Örnek: 404/A)] yazılır. <b>(135/39)</b>",
+    "tags": "geçersiz, zarf, filigran, amble, mühür, yırtık, imza, parmak izi, fazla, az, pusula, yanlış, yakmak, çakmak, yakılır,yok et, eksik",
+    "page": 16
   },
   {
     "id": 115,
@@ -117,6 +149,14 @@
     "question": "Bir pusula nasıl geçersiz olur?",
     "answer": "<ul><li>Sandık kurulunca verilen biçim ve renkte olmayan</li><li>Türkiye Cumhuriyeti Yüksek Seçim Kurulu filigranı bulunmayan</li><li>Arkasında sandık kurulu mührü bulunmayan</li><li>Hiçbir yerine “TERCİH” veya “EVET” mührü basılmamış olan</li><li>Birden fazla cumhurbaşkanı adayına, aynı ittifak içinde yer almayan birden fazla siyasi partiye, birden fazla ittifaka veya birden fazla bağımsız adaya ayrılan alanlara “TERCİH” veya “EVET” mührü basılmış olan</li> <li>Birden fazla cumhurbaşkanı adayına, aynı ittifak içinde yer almayan birden fazla siyasi partiye, birden fazla ittifaka veya birden fazla bağımsız adaya ayrılan alana taşmış “TERCİH” veya “EVET” mührü bulunan</li><li>Sandığın ait olduğu seçim çevresinden başka bir seçim çevresi için düzenlenmiş olan</li><li>Bütünlüğü bozulacak şekilde yırtılmış veya koparılmış olan</li> <li>Üzerine “TERCİH” veya “EVET” mührü dışında veya “TERCİH” veya “EVET” mührü yerine herhangi bir özel işaret, herhangi bir isim, imza kaşesi, mühür veya parmak izi basılmış olan</li> <li>Üzerinde yer alan cumhurbaşkanı adaylarına, siyasi partilere, ittifaklara veya bağımsız adaylara ait bölümleri belirgin bir şekilde ve özel olarak karalanmış, çizilmiş veya işaretlenmiş olan</li><li>Üzerinde yer alan matbu yazıların ve şekillerin dışında yazılar veya harfler veya sayılar yazılmış veya şekiller çizilmiş olan</li></ul>birleşik oy pusulaları geçerli değildir.<br/><br/>Aşağıdaki haller oy pusulalarını geçersiz kılmaz;<ul><li>Zarfların açılması veya oyların okunması sırasında yırtılması</li><li>Bütünlüğü bozulmaksızın bir kısmının kazaen yırtılması</li><li>Herhangi bir şekilde lekelenmiş olup da bunun özel olarak işaret koymak amacıyla yapıldığının anlaşılamaması</li> <li>Birleşik oy pusulasının katlanarak zarfa konulması sebebiyle “TERCİH” veya “EVET” mührü ile oy pusulasının arkasına basılan sandık kurulu mühür izinin oy pusulasının diğer kısımlarına geçmesi</li><li>Bir cumhurbaşkanı adayı, siyasi parti, ittifak alanı veya bağımsız aday alanına basılan “TERCİH” veya “EVET” mührünün alanları ayıran çizgili bölgeye taşmış olması</li><li>Başka bir cumhurbaşkanı adayı, siyasi parti, ittifak alanı veya bağımsız adayın alanına taşmamak kaydıyla, cumhurbaşkanı adayı, siyasi parti, ittifak alanı veya bağımsız aday alanına birden çok “TERCİH” veya “EVET” mührü basılması</li><li>Yetkili seçim kurulları tarafından gönderilen ve Türkiye Cumhuriyeti Yüksek Seçim Kurulu filigranı bulunan oy pusulalarının arkasının sandık kurullarının ihmaliyle mühürlenmemiş olması. <b>(135/41)</b></li></ul>",
     "tags": "hesaba katılmayan, geçersiz, pusula, filigran, mühür, tercih, evet",
+    "page": 20
+  },
+  {
+    "id": 119,
+    "tag": "oy-hangisine",
+    "question": "Oyun hangi partiye/adaya gittiğini nasıl anlayabilirim?",
+    "answer": "Öncelikle sandık kurulu ile anlaşamamanız durumunda Yüksek Seçim Kurulu'nun çuvalların içine yerleştirdiği örnek şablonları incelemeniz önerilir.<br/>Eğer basılan mühür sadece tek bir adayın alanı içerisinde kalıyorsa ve diğer adayın alanına girmiyorsa, oy o adayın hanesine yazılır. Alan içinde basılan mühürün konumu ve sayısı bu durumu değiştirmez. <b>Bkz: Geçerli olmayan oy pusulaları.</b>",
+    "tags": "sayılır, sayılmaz, geçersiz, aday, parti, hangisi",
     "page": 20
   },
   {
