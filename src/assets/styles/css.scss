@@ -226,7 +226,21 @@ img.party-img {
     }
 
     tbody tr td {
-        color: black !important
+        color: black !important;
+
+        .delete-button {
+            font-size: 20px;
+            border-radius: 6px;
+            background-color: #ffffffa8;
+            padding: 2px;
+            transition: 0.2s;
+
+            &.consent {
+                background-color: crimson;
+                font-size: 25px;
+
+            }
+        }
     }
 
     tr th,
@@ -237,11 +251,22 @@ img.party-img {
 
     .kk-row {
         background-color: #ff8383;
-        height: 60px;
+
+        &.consent {
+            background-color: #ff83839f;
+        }
     }
 
     .rte-row {
         background-color: #ffb27f;
+
+        &.consent {
+            background-color: #ffb27f9d;
+        }
+    }
+
+    .kk-row,
+    .rte-row {
         height: 60px;
     }
 

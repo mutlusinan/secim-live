@@ -60,6 +60,7 @@ export default function SayimDokumCetveli() {
     defaultValue: [],
   });
   const [voteProgress, setVoteProgress] = useState<VoteType[]>([]);
+  const [deleteConsent, setDeleteConsent] = useState(-1);
   const [voteLimit, setVoteLimit] = useState(5);
   const [sonuclar, setSonuclar] = useState({});
   const [total, setTotal] = useState(0);
@@ -108,6 +109,7 @@ export default function SayimDokumCetveli() {
 
       setVoteProgress([...voteProgress, { a: voteId, t: hours }]);
       setSonuclar(degisen);
+      setDeleteConsent(-1);
     } else if (activity === "dec") {
       // @ts-ignore
       if (sonuclar[voteId] > 0) {
@@ -124,10 +126,15 @@ export default function SayimDokumCetveli() {
 
   const deleteVote = (e: any) => {
     const index = voteProgress.length - e.target.dataset.index - 1;
-    const voteList = voteProgress;
-    changeVoteNum("dec", voteProgress[index].a);
-    voteList.splice(index, 1);
-    setVoteProgress([...voteList]);
+    if (deleteConsent === voteProgress.length - e.target.dataset.index) {
+      const voteList = voteProgress;
+      changeVoteNum("dec", voteProgress[index].a);
+      voteList.splice(index, 1);
+      setVoteProgress([...voteList]);
+      setDeleteConsent(-1);
+    } else {
+      setDeleteConsent(voteProgress.length - e.target.dataset.index);
+    }
   };
 
   const saveSandik = () => {
@@ -457,7 +464,13 @@ export default function SayimDokumCetveli() {
                   <th>Oy sayısı</th>
                   <th>Aday</th>
                   <th>Saat</th>
-                  <th>Oyu sil</th>
+                  <th
+                    style={{
+                      minWidth: "63px",
+                    }}
+                  >
+                    Oyu sil
+                  </th>
                 </tr>
               </thead>
               <tbody>
@@ -473,6 +486,9 @@ export default function SayimDokumCetveli() {
                             (row.a === "kk" ? "kk-row" : "rte-row") +
                             ((voteProgress.length - i) % 10 === 0
                               ? " bolder"
+                              : "") +
+                            (deleteConsent === voteProgress.length - i
+                              ? " consent"
                               : "")
                           }
                           id={i === 0 ? "shine" : ""}
@@ -488,12 +504,12 @@ export default function SayimDokumCetveli() {
                             <span
                               data-index={i}
                               onClick={deleteVote}
-                              style={{
-                                fontSize: "20px",
-                                borderRadius: "6px",
-                                backgroundColor: "#ffffffa8",
-                                padding: "2px",
-                              }}
+                              className={
+                                "delete-button" +
+                                (deleteConsent === voteProgress.length - i
+                                  ? " consent"
+                                  : "")
+                              }
                             >
                               🗑️
                             </span>
