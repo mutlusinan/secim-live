@@ -225,9 +225,14 @@ img.party-img {
         transition: 0s;
     }
 
+    tbody tr td {
+        color: black !important
+    }
+
     tr th,
     tr td {
         text-align: center !important;
+
     }
 
     .kk-row {
